@@ -2,15 +2,20 @@ package ch.fhnw.crm.crmwebservice.data.domain;
 
 
 
-import ch.fhnw.crm.crmwebservice.data.enums.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "clients")
+public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "first_name")
     private String firstName;
@@ -21,9 +26,9 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "role")
-    private Role role;
+    @JsonIgnore
+	private String role = "USER";
+	@Transient // will not be stored in DB
 
     @Column(name = "password")
     private String password;
@@ -36,6 +41,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getFirstName() {
@@ -62,13 +75,10 @@ public class User {
         this.email = email;
     }
 
-    public Role getRole() {
-        return role;
-    }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
+    public String getRole() {
+		return role;
+	}
 
     public String getPassword() {
         return password;
@@ -78,15 +88,15 @@ public class User {
         this.password = password;
     }
 
-    public User(String firstName, String lastName, String email, Role role, String password) {
+    public Client(String name, String firstName, String lastName, String email, String password) {
+        this.name = name;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.role = role;
         this.password = password;
     }
 
-    public User() {
+    public Client() {
     }
 
     

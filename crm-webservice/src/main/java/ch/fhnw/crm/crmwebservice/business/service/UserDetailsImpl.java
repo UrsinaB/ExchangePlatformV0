@@ -7,17 +7,17 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import ch.fhnw.crm.crmwebservice.data.domain.Agent;
+import ch.fhnw.crm.crmwebservice.data.domain.Client;
 
 public class UserDetailsImpl implements UserDetails {
     private String username;
     private String password;
     private List<GrantedAuthority> authorities;
 
-    public UserDetailsImpl(Agent agent) {
-        username=agent.getName();
-        password=agent.getPassword();
-        authorities.add(new SimpleGrantedAuthority("ROLE_" + agent.getRole()));
+    public UserDetailsImpl(Client client) {
+        username=client.getName();
+        password=client.getPassword();
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + client.getRole()));
     }
 
     @Override
