@@ -45,5 +45,10 @@ public interface ItemRepository extends JpaRepository<Item, Long>{
 
     //search for items by title and description using keywords
     List<Item> findByItemTitleContainingOrItemDescriptionContainingIgnoreCase(String itemTitle, String itemDescription);
-    
+
+    Item findByItemTitle(String itemTitle);
+
+    Item findByItemTitleAndItemIdNot(String itemTitle, Long itemId);
+
+    List<Item> findByClientId(Long clientId);
 }

@@ -2,9 +2,11 @@ package ch.fhnw.crm.crmwebservice.data.domain;
 
 
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,6 +14,7 @@ import jakarta.persistence.*;
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Hidden
     private Long id;
 
     @Column(name = "name")
@@ -33,7 +36,11 @@ public class Client {
     @Column(name = "password")
     private String password;
 
-    
+    @OneToMany(mappedBy = "client")
+    @JsonIgnore
+    private List<Item> items;
+
+
 
     public Long getId() {
         return id;
@@ -87,6 +94,15 @@ public class Client {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+    public List<Item> getCgetItems() {
+		return items;
+	}
+
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}
 
     public Client(String name, String firstName, String lastName, String email, String password) {
         this.name = name;

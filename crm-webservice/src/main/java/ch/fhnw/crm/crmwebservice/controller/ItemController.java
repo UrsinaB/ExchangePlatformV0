@@ -12,26 +12,36 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import ch.fhnw.crm.crmwebservice.business.service.ItemService;
 import ch.fhnw.crm.crmwebservice.data.domain.Item;
 import ch.fhnw.crm.crmwebservice.data.domain.Item.ItemCategory;
+import io.swagger.v3.oas.annotations.Hidden;
+import jakarta.validation.ConstraintViolationException;
 
 @RestController
-@RequestMapping("/items")
+@RequestMapping("api/items")
 public class ItemController {
 
     @Autowired
     private ItemService itemService;
     
-     //POST method to add a new item to the database and to relate it to a specific user -> TESTED WORKS
-    @PostMapping(path ="/add", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Item> addItem(@RequestBody Item item) {
-        itemService.saveItem(item);
-        return new ResponseEntity<>(item, HttpStatus.CREATED);
+     //POST method to add a new item to the database and to relate it to a specific user 
+    @PostMapping (path = "/create/{clientId}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<Item> createItem(@RequestBody Item item, @PathVariable(value = "clientId") String clientId) {
+        try {
+            itemService.createItem(item, Long.parseLong(clientId));
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
+        }
+        return ResponseEntity.ok(item);
     }
+
+
 
 
     //PUT method to update an existing item in the database by its id -> TESTED WORKS
@@ -39,7 +49,7 @@ public class ItemController {
     public ResponseEntity<Void> putProfile(@RequestBody Item item, @PathVariable(value = "itemId") String itemId) {
         try {
             item.setItemId(Long.parseLong(itemId));
-            itemService.saveItem(item);
+            itemService.updateItem(item);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
         }
@@ -100,6 +110,22 @@ public class ItemController {
         return new ResponseEntity<>(count, HttpStatus.OK);  
         
     }
+
+    //GET method to retrieve all items that belong to a specific client
+    @GetMapping(path = "/client/{clientId}", produces = "application/json")
+    public ResponseEntity<List<Item>> getItemByClient(@PathVariable(value = "clientId") Long clientId) {
+        List<Item> items = itemService.getItemsbyClient(clientId);
+        return new ResponseEntity<>(items, HttpStatus.OK);
+    }
+
+    
+    @Hidden
+    @RequestMapping(value = "/validate", method = {RequestMethod.GET, RequestMethod.HEAD})
+    public ResponseEntity<Void> init() {
+        return ResponseEntity.ok().build();
+    }
+    
+
 
 }
     

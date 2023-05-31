@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import ch.fhnw.crm.crmwebservice.business.ClientService;
+import ch.fhnw.crm.crmwebservice.business.service.ClientService;
 import ch.fhnw.crm.crmwebservice.data.domain.Client;
 import io.swagger.v3.oas.annotations.Hidden;
 

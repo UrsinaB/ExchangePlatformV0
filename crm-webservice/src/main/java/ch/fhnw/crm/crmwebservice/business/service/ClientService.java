@@ -1,4 +1,4 @@
-package ch.fhnw.crm.crmwebservice.business;
+package ch.fhnw.crm.crmwebservice.business.service;
 
 import java.util.List;
 

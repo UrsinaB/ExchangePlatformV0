@@ -2,6 +2,8 @@ package ch.fhnw.crm.crmwebservice.data.domain;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,8 +36,7 @@ public class Item {
     private Long itemId;
 
     // declaring the attributes of the table
-    // declaring that the attribute is not allowed to be empty
-    @NotEmpty(message ="Please provide a title for your ite")
+    
     private String itemTitle;
 
 
@@ -92,6 +93,12 @@ public class Item {
 
 	@Enumerated(EnumType.STRING)
 	private ItemCategory itemCategory;
+
+
+	@ManyToOne
+	@JsonIgnore
+	private Client client;
+
 
     // declaring the getters and setters for the attributes
 
@@ -161,4 +168,12 @@ public class Item {
 		this.itemCategory= itemCategory;
 	}
     
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
 }

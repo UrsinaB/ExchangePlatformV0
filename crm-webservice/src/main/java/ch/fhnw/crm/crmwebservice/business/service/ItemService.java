@@ -6,23 +6,41 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
+import ch.fhnw.crm.crmwebservice.data.domain.Client;
 import ch.fhnw.crm.crmwebservice.data.domain.Item;
 import ch.fhnw.crm.crmwebservice.data.domain.Item.ItemCategory;
 import ch.fhnw.crm.crmwebservice.data.repository.ItemRepository;
+import jakarta.validation.Valid;
+
 
 @Service
+@Validated
 public class ItemService {
 
     @Autowired
     private ItemRepository itemRepository;
-    private Item item;
+    @Autowired
+    private ClientService clientService;
 
 
-    //create and check if item already exists and if no, save new item
-    public void saveItem(Item item) {
-        itemRepository.save(item);
+    // create item and assign it to the current client (user)
+    
+public Item createItem(@Valid Item item, Long clientId) throws Exception {
+    if (item.getItemId() == null) {
+            item.setClient(clientService.getCurrentUser(clientId));
+        if (itemRepository.findByItemTitleAndItemIdNot(item.getItemTitle(), item.getItemId()) != null) {
+            throw new Exception("Title " + item.getItemTitle() + " already assigned to an item.");
+        }
+        if (item.getClient() == null) {
+            item.setClient(clientService.getCurrentUser(clientId));
+        }
     }
+    return itemRepository.save(item);
+}
+
+
 
     //get all items
     public List<Item> getAllItems() {
@@ -82,6 +100,14 @@ public class ItemService {
 
 			return items;
 		}
+
+        // find all items assigned to a specific client
+        public List<Item> getItemsbyClient(Long clientId) {
+            return itemRepository.findByClientId(clientId);
+
+        }
+
+
 
 
 
