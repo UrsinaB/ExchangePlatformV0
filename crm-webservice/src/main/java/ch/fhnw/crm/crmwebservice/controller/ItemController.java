@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -58,7 +59,7 @@ public class ItemController {
     
 
     //DELETE method to delete an existing item from the database by its id -> TESTED WORKS
-    @PostMapping(path = "/delete/{itemId}")
+    @DeleteMapping(path = "/delete/{itemId}")
     public ResponseEntity<Void> deleteItem(@PathVariable(value = "itemId") String itemId) {
         try {
             itemService.deleteItem(Long.parseLong(itemId));
@@ -116,6 +117,13 @@ public class ItemController {
     public ResponseEntity<List<Item>> getItemByClient(@PathVariable(value = "clientId") Long clientId) {
         List<Item> items = itemService.getItemsbyClient(clientId);
         return new ResponseEntity<>(items, HttpStatus.OK);
+    }
+
+    //GET method to retrieve an item by its id
+    @GetMapping(path = "/{itemId}", produces = "application/json")
+    public ResponseEntity<Item> getItemById(@PathVariable(value = "itemId") Long itemId) {
+        Item item = itemService.getItemById(itemId);
+        return new ResponseEntity<>(item, HttpStatus.OK);
     }
 
     

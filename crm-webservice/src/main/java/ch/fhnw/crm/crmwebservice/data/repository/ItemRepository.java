@@ -51,4 +51,6 @@ public interface ItemRepository extends JpaRepository<Item, Long>{
     Item findByItemTitleAndItemIdNot(String itemTitle, Long itemId);
 
     List<Item> findByClientId(Long clientId);
+
+    Item findByItemId(Long itemId);
 }

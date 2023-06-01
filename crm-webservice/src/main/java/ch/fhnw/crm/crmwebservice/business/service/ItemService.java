@@ -109,6 +109,12 @@ public Item createItem(@Valid Item item, Long clientId) throws Exception {
 
 
 
+        public Item getItemById(Long itemId) {
+            return itemRepository.findByItemId(itemId);
+        }
+
+
+
 
 
 }
