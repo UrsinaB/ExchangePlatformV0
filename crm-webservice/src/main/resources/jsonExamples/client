@@ -1,0 +1,32 @@
+{
+  "name": "Ada",
+  "firstName": "Sherdel",
+  "lastName": "Nomen",
+  "email": "Ada@grace.edu",
+  "password": "password",
+  "cgetItems": [
+    {
+      "itemTitle": "string",
+      "itemDescription": "string",
+      "itemListingDate": "2023-06-02T10:34:39.643Z",
+      "itemStatus": "AVAILABLE",
+      "itemRating": "POSITIVE",
+      "comment": "string",
+      "itemCategory": "BOOKS",
+      "description": "string"
+    }
+  ]
+}
+
+
+/api/items/create/{clientId}
+{
+    "itemTitle": "Brave New World",
+    "itemDescription": "Fiction",
+    "itemListingDate": "2023-06-02T10:49:25.473Z",
+    "itemStatus": "AVAILABLE",
+    "itemRating": "POSITIVE",
+    "comment": "Great book!",
+    "itemCategory": "BOOKS",
+    "description": "The novel examines a futuristic society, called the World State, that revolves around science and efficiency."
+}
