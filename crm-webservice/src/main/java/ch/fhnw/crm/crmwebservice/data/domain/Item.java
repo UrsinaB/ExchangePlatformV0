@@ -1,10 +1,12 @@
 package ch.fhnw.crm.crmwebservice.data.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import io.swagger.v3.oas.annotations.Hidden;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -13,6 +15,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -33,6 +36,7 @@ public class Item {
     @GeneratedValue
     // declaring that the primary key should not be visible in the API
     @Hidden
+	@Column(name = "item_id")
     private Long itemId;
 
     // declaring the attributes of the table
@@ -77,9 +81,6 @@ public class Item {
     @Enumerated(EnumType.STRING)
 	private ItemRating itemRating;
 
-    @Column(name = "comment")
-    private String comment;
-
 
 	// enum for item category
 	public enum ItemCategory {
@@ -98,6 +99,9 @@ public class Item {
 	@ManyToOne
 	@JsonIgnore
 	private Client client;
+
+	@OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
+	private List<Comment> comments;
 
 
     // declaring the getters and setters for the attributes
@@ -152,13 +156,6 @@ public class Item {
 		this.itemRating = itemRating;
     }
 
-    public void setComment(String comment) {
-		this.comment = comment;
-	}
-
-	public String getComment() {
-		return comment;
-	}
 
 	public ItemCategory getItemCategory() {
 		return itemCategory;
@@ -175,5 +172,13 @@ public class Item {
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments= comments;
 	}
 }

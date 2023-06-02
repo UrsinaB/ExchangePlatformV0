@@ -55,7 +55,9 @@ public class ClientService {
     public Client getCurrentUser(Long clientId) {
         Client client = clientRepository.findById(clientId).get();
         return client;
-    } 
+    }
+
+
     
 
 }
