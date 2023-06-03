@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import ch.fhnw.crm.crmwebservice.business.service.ClientService;
 import ch.fhnw.crm.crmwebservice.business.service.CommentService;
@@ -27,19 +28,17 @@ public class CommentController {
     private ClientService clientService;
 
     // create comment
-    @PostMapping("/create/{itemId}/{clientId}")
-    public ResponseEntity<Comment> createComment(
-    @RequestBody @Valid Comment comment, 
-    @PathVariable Long itemId,
-    @PathVariable Long clientId
-    ) {
+    @PostMapping(path ="/create/{itemId}/{clientId}" ,consumes = "application/json", produces = "application/json")
+    public ResponseEntity<Comment> createComment(@RequestBody Comment comment, 
+    @PathVariable (value = "itemId") String itemId, 
+    @PathVariable (value = "clientId") String clientId) {
         try {
-            Comment createdComment = commentService.createComment(comment, itemId, clientId);
-            return ResponseEntity.status(HttpStatus.CREATED).body(createdComment);
+            commentService.createComment(comment, Long.parseLong(itemId), Long.parseLong(clientId));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        } 
-    }
-    
-    
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
+        }
+        return new ResponseEntity<Comment>(commentService.createComment(comment, Long.parseLong(itemId), Long.parseLong(clientId)), HttpStatus.CREATED);
+    } 
 }
+    
+

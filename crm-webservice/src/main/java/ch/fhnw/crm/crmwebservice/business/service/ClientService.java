@@ -37,7 +37,7 @@ public class ClientService {
         } else if (clientRepository.findByEmailAndIdAndNameNot(client.getEmail(), client.getId(),client.getName()) != null) {
             throw new Exception("Email address " + client.getEmail() + " and name " + client.getName() + " already assigned another user.");
         }
-        client.setPassword(passwordEncoder.encode(client.getPassword()));
+        // client.setPassword(passwordEncoder.encode(client.getPassword()));
         clientRepository.save(client);
     }
 

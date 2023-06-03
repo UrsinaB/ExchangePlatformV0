@@ -5,16 +5,15 @@ package ch.fhnw.crm.crmwebservice.data.domain;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "clients")
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Hidden
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "name")
@@ -37,8 +36,12 @@ public class Client {
     private String password;
 
     @OneToMany(mappedBy = "client")
-    @JsonIgnore
     private List<Item> items;
+
+    @OneToMany(mappedBy = "client")
+    @JsonManagedReference("comment - client")
+    private List<Comment> comments;
+
 
 
 
@@ -103,6 +106,15 @@ public class Client {
 	public void setItems(List<Item> items) {
 		this.items = items;
 	}
+
+    public List<Comment> getComments() {
+        return comments;
+
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
 
     public Client(String name, String firstName, String lastName, String email, String password) {
         this.name = name;

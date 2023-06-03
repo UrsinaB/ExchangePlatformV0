@@ -8,6 +8,9 @@ import ch.fhnw.crm.crmwebservice.data.domain.Comment;
 @Repository
 public interface  CommentRepository extends JpaRepository<Comment, Long> {
 
+   
+    
+
 
     
 }

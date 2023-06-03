@@ -3,7 +3,9 @@ package ch.fhnw.crm.crmwebservice.data.domain;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.CascadeType;
@@ -35,7 +37,6 @@ public class Item {
     // declaring that the primary key is generated automatically
     @GeneratedValue
     // declaring that the primary key should not be visible in the API
-    @Hidden
 	@Column(name = "item_id")
     private Long itemId;
 
@@ -97,10 +98,11 @@ public class Item {
 
 
 	@ManyToOne
-	@JsonIgnore
+	@JsonBackReference
 	private Client client;
 
 	@OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
+	@JsonManagedReference("comment - item")
 	private List<Comment> comments;
 
 
