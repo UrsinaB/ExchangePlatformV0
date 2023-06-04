@@ -3,7 +3,10 @@ package ch.fhnw.crm.crmwebservice.data.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import io.swagger.v3.oas.annotations.Hidden;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,6 +15,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "comments")
@@ -22,7 +26,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int commentId;
 
-    @Lob
+    
     private String text;
 
     @ManyToOne
@@ -38,7 +42,8 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(String text, Item item, Client client) {
+    public Comment(int commentId, String text, Item item, Client client) {
+        this.commentId = commentId;
         this.text = text;
         this.item = item;
         this.client = client;

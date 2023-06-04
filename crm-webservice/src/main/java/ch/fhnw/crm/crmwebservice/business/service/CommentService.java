@@ -1,6 +1,7 @@
 package ch.fhnw.crm.crmwebservice.business.service;
 
 import java.util.UUID;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -32,6 +33,38 @@ private ClientService clientService;
             
             return commentRepository.save(comment);
     }
+
+    //find a comment by its id
+    public Comment findCommentById(int commentId) {
+        return commentRepository.findByCommentId(commentId);
+    }
+
+   //update the text of an existing comment
+   public void updateComment(int commentId, String newText) {
+        Comment comment = commentRepository.findByCommentId(commentId);
+        comment.setText(newText);
+        commentRepository.save(comment);
+    }
+
+    //delete all comments
+    public void deleteAllComments() {
+        commentRepository.deleteAll();
+    }
+
+    //delete a comment by its id
+    public void deleteCommentById(int commentId) {
+        commentRepository.deleteByCommentId(commentId);
+    }
+
+    //find all comments
+    public List<Comment> findAllComments() {
+        return commentRepository.findAll();
+    }
+
+
+   
+    
 }
+    
 
 
