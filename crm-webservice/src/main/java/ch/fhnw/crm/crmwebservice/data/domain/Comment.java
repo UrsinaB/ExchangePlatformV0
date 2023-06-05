@@ -26,7 +26,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int commentId;
 
-    
+    @Lob
     private String text;
 
     @ManyToOne

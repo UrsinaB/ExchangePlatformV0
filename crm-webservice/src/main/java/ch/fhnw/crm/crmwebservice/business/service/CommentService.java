@@ -29,6 +29,7 @@ private ClientService clientService;
         if (itemId != null && clientId != null) {
             comment.setItem(itemService.getItemById(itemId));
             comment.setClient(clientService.getCurrentUser(clientId));
+            comment.setText(comment.getText());
         }
             
             return commentRepository.save(comment);
