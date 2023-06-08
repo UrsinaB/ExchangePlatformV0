@@ -55,7 +55,12 @@ public Item createItem(@Valid Item item, Long clientId) throws Exception {
         //delete item
         public void deleteItem(Long itemId) {
         itemRepository.deleteById(itemId);
-    }
+        }
+
+        //delete all items
+        public void deleteAllItems() {
+            itemRepository.deleteAll();
+        }
 
         //find all item listed on a certain date
 		public List<Item> findAllItemsListedOnDate(Date date) {
@@ -82,10 +87,7 @@ public Item createItem(@Valid Item item, Long clientId) throws Exception {
             return itemRepository.findByItemStatus(itemStatus);
         }
 
-        //find all items with a certain rating
-        public List<Item> findAllItemsWithRating(String itemRating) {
-            return itemRepository.findByItemRating(itemRating);
-        }
+
 
         // search for items by title and description using keywords
 

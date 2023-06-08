@@ -69,6 +69,17 @@ public class ItemController {
         return ResponseEntity.ok().build();
     }
 
+    //Delete method to delete all items from the database 
+    @DeleteMapping(path = "/delete/all")
+    public ResponseEntity<Void> deleteAllItems() {
+        try {
+            itemService.deleteAllItems();
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
+        }
+        return ResponseEntity.ok().build();
+    }
+
     //GET method to retrieve all items listed on a certain date from the database
 
     //GET method to count all items from the database -> TESTED WORKS

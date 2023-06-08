@@ -57,6 +57,11 @@ public class ClientService {
         return client;
     }
 
+    //delete all clients
+    public void deleteAllClients() {
+        clientRepository.deleteAll();
+    }
+
 
     
 

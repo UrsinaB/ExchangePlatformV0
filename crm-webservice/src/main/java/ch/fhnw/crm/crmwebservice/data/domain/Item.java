@@ -1,5 +1,6 @@
 package ch.fhnw.crm.crmwebservice.data.domain;
 
+
 import java.util.Date;
 import java.util.List;
 
@@ -23,6 +24,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.NotEmpty;
+import java.time.LocalDate;
 
 // declaring a database relation items (the item to be exchanged)
 @Entity 
@@ -50,15 +52,14 @@ public class Item {
 	@Column(length = 1000)
 	private String itemDescription;
 
-    // declaring the attribute as a date
-    @Temporal(TemporalType.DATE)
-	@Column(name = "itemListingDate")
-	private Date itemListingDate;
+    // declaring the attribute as LocalDate that is automatically generated
+    @Column(name = "itemListingDate")
+    private LocalDate itemListingDate;
 
-	@PrePersist
-	protected void onCreate() {
-		itemListingDate = new Date();
-	}
+    @PrePersist
+    protected void onCreate() {
+        itemListingDate = LocalDate.now();
+    }
 
 
     //enum for item status
@@ -72,24 +73,20 @@ public class Item {
 	private ItemStatus itemStatus;
 
 
-    //enum for item rating
-    public enum ItemRating {
-		POSITIVE,
-		NEUTRAL,
-		NEGATIVE
-	}
-
-    @Enumerated(EnumType.STRING)
-	private ItemRating itemRating;
 
 
 	// enum for item category
 	public enum ItemCategory {
-		BOOKS,
+		MUSIC,
 		CLOTHES,
 		ELECTRONICS,
 		FURNITURE,
 		SPORTS,
+		BEAUTIY,
+		TOYS,
+		JEWELRY,
+		PETS,
+		BOOKS,
 		OTHER
 	}
 
@@ -134,11 +131,11 @@ public class Item {
 		this.itemDescription = itemDescription;
 	}
 
-    public Date getItemListingDate() {
+    public LocalDate getItemListingDate() {
 		return itemListingDate;
 	}
 
-	public void setItemListingDate(Date itemListingDate) {
+	public void setItemListingDate(LocalDate itemListingDate) {
 		this.itemListingDate = itemListingDate;
 	}
 
@@ -150,13 +147,6 @@ public class Item {
 	public void setItemStatus(ItemStatus itemStatus) {
 		this.itemStatus = itemStatus;
 	}
-    public ItemRating getItemRating() {
-		return itemRating;
-	}
-
-	public void setItemRating(ItemRating itemRating) {
-		this.itemRating = itemRating;
-    }
 
 
 	public ItemCategory getItemCategory() {

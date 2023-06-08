@@ -50,6 +50,20 @@ public class ClientController {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
         }
         return ResponseEntity.ok().build();
+
+        
+    }
+
+
+    //delete all clients
+    @DeleteMapping("/deleteall")
+    public ResponseEntity<Void> deleteAll() {
+        try {
+            clientService.deleteAllClients();
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
+        }
+        return ResponseEntity.ok().build();
     }
 
     @Hidden

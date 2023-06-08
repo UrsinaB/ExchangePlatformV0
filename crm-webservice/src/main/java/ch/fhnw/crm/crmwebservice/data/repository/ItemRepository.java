@@ -19,9 +19,6 @@ public interface ItemRepository extends JpaRepository<Item, Long>{
     //find all items with a certain status
     List<Item> findByItemStatus(Item.ItemStatus itemStatus);
 
-    //find all items with a certain rating
-    List<Item> findByItemRating(String itemRating);
-
     //find all items belonging to a certein item category
     List<Item> findByItemCategory(ItemCategory itemCategory);
 
