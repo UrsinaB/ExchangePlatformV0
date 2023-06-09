@@ -4,6 +4,7 @@ package ch.fhnw.crm.crmwebservice.data.domain;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -39,8 +40,16 @@ public class Client {
     private List<Item> items;
 
     @OneToMany(mappedBy = "client")
-    @JsonManagedReference("comment - client")
+    @JsonManagedReference("comment-client")
     private List<Comment> comments;
+
+    @OneToMany(mappedBy = "offeringUser")
+    @JsonManagedReference("offeringUser-transaction")
+    private List<Transaction> offeredTransactions;
+
+    @OneToMany(mappedBy = "receivingUser")
+    @JsonManagedReference("receivingUser-transaction")
+    private List<Transaction> receivedTransactions;
 
 
 
@@ -125,6 +134,22 @@ public class Client {
     }
 
     public Client() {
+    }
+
+    public List<Transaction> getOfferedTransactions() {
+        return offeredTransactions;
+    }
+
+    public void setOfferedTransactions(List<Transaction> offeredTransactions) {
+        this.offeredTransactions = offeredTransactions;
+    }
+
+    public List<Transaction> getReceivedTransactions() {
+        return receivedTransactions;
+    }
+
+    public void setReceivedTransactions(List<Transaction> receivedTransactions) {
+        this.receivedTransactions = receivedTransactions;
     }
 
     

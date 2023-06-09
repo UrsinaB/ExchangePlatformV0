@@ -31,12 +31,12 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name = "item_id")
-    @JsonBackReference("comment - item")
+    @JsonBackReference("comment-item")
     private Item item;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    @JsonBackReference("comment - client")
+    @JsonBackReference("comment-client")
     private Client client;
 
     public Comment() {

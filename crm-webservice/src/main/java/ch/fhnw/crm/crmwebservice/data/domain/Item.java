@@ -19,6 +19,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -99,8 +100,13 @@ public class Item {
 	private Client client;
 
 	@OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
-	@JsonManagedReference("comment - item")
+	@JsonManagedReference("comment-item")
 	private List<Comment> comments;
+
+
+	@OneToOne (mappedBy = "item")
+	@JsonManagedReference("transaction-item")
+	private Transaction transaction;
 
 
     // declaring the getters and setters for the attributes
@@ -172,5 +178,13 @@ public class Item {
 
 	public void setComments(List<Comment> comments) {
 		this.comments= comments;
+	}
+
+	public Transaction getTransaction() {
+		return transaction;
+	}
+
+	public void setTransaction(Transaction transaction) {
+		this.transaction = transaction;
 	}
 }
