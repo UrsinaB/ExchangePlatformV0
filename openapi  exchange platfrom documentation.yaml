@@ -1,0 +1,682 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost
+    description: Generated server url
+
+paths:
+  /api/items/{itemId}:
+    get:
+      tags:
+        - item Everything about the items on our exchange platform
+      summary: Find an existing item
+      description: Find an existing item by its id
+      operationId: getItemById
+      parameters:
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+    put:
+      tags:
+        - item Everything about the items on our exchange platform
+      summary: Update an existing item
+      description: Change specific attributes of an item or correct them
+      operationId: putProfile
+      parameters:
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/comments/update/{commentId}:
+    put:
+      tags:
+        - comment everything you commented about the posted items 
+      summary: Update a comment you maid about another user's item
+      description: Change or correct the comment
+      operationId: updateComment
+      parameters:
+        - name: commentId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommentUpdateDTO'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Comment'
+  /api/client/profile/{clientId}:
+    get:
+      tags:
+        - Operations about the users of the exchange platform
+      summary: Find the profile of a user
+      description: The profile of a specific user is shown with all its attributes and relations
+      operationId: getProfile
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Client'
+    put:
+      tags:
+        - Operations about the users of the exchange platform
+      summary: Update a user's profile
+      description: Update attributes and relations of a specific user profile
+      operationId: putProfile_1
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Client'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/transactions/create/{itemId}/{offeringUserId}/{receivingUserId}:
+    post:
+      tags:
+        - Operations about the transactions of the items between users
+      summary: Update the information about item transactions
+      description: Update the information about item transactions
+      operationId: createTransaction
+      parameters:
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: offeringUserId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: receivingUserId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Transaction'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transaction'
+  /api/items/create/{clientId}:
+    post:
+      tags:
+        - item Everything about the items on our exchange platform
+      summary: Post a new item
+      description: The details of a new user are captured and saved 
+      operationId: createItem
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+  /api/comments/create/{itemId}/{clientId}:
+    post:
+      tags:
+        - comment everything you commented about the posted items
+      summary: Create a new comment regarding a specific item  
+      description: Write a comment or a question regarding an item posted by another user
+      operationId: createComment
+      parameters:
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: clientId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+  /api/client/register:
+    post:
+      tags:
+        - Operations about the users of the exchange platform
+      summary: Register a new user
+      description: provide the credentials of an user and save the user in the database
+      operationId: postRegister
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Client'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/transactions/findByReceivingUserId/{receivingUserId}:
+    get:
+      tags:
+        -  Operations about the transactions of the items between users
+      summary: Find all transactions where you have been involved as receiving user  
+      operationId: findTransactionByReceivingUserId
+      parameters:
+        - name: receivingUserId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Transaction'
+  /api/transactions/findByOfferingUserId/{offeringUserId}:
+    get:
+      tags:
+        - Operations about the transactions of the items between users
+      summary: Find all transaction where you have been involved as offering user  
+      operationId: findTransactionByOfferingUserId
+      parameters:
+        - name: offeringUserId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Transaction'
+  /api/transactions/findAll:
+    get:
+      tags:
+        - Operations about the transactions of the items between users
+      summary: Find all transactons that have taken place between users  
+      operationId: findAllTransactions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Transaction'
+  /api/items/search/{keyword}:
+    get:
+      tags:
+        - item Everything about the items on our exchange platform
+      summary: Search all items that provide a specific keyword
+      description: search for a keyword in the items title or description
+      operationId: searchItems
+      parameters:
+        - name: keyword
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+  /api/items/count:
+    get:
+      tags:
+        - item Everything about the items on our exchange platform
+      summary: Count all items posted on the platform
+      description: this operation counts all items on the platform and returns the total amount of items
+      operationId: countItems
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int64
+  /api/items/client/{clientId}:
+    get:
+      tags:
+        - item Everything about the items on our exchange platform
+      summary: Find all items by user
+      description: find all items that a specific user has put on the platform
+      operationId: getItemByClient
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+  /api/items/category/{itemCategory}:
+    get:
+      tags:
+        - item Everything about the items on our exchange platform
+      summary: Find items by category
+      description: With this operation you can find all items on the platform belonging to a specific item category
+      operationId: getItemByCategory
+      parameters:
+        - name: itemCategory
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - MUSIC
+              - CLOTHES
+              - ELECTRONICS
+              - FURNITURE
+              - SPORTS
+              - BEAUTIY
+              - TOYS
+              - JEWELRY
+              - PETS
+              - BOOKS
+              - OTHER
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+  /api/items/category/count/{itemCategory}:
+    get:
+      tags:
+        - item Everything about the items on our exchange platform
+      summary: Count all items of one specific category
+      description: find the amount of items on the platform belonging to a specific item category
+      operationId: countItemsByCategory
+      parameters:
+        - name: itemCategory
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - MUSIC
+              - CLOTHES
+              - ELECTRONICS
+              - FURNITURE
+              - SPORTS
+              - BEAUTIY
+              - TOYS
+              - JEWELRY
+              - PETS
+              - BOOKS
+              - OTHER
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int64
+  /api/items/all:
+    get:
+      tags:
+        - item Everything about the items on our exchange platform
+      summary: Find all items on the platform
+      description: Find all items that have benn posted by all users on the platform and that have not been deleted.
+      operationId: getAllItems
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+  /api/comments/{commentId}:
+    get:
+      tags:
+        - comment everything you commented about the posted items 
+      summary: Find a specific comment by id  
+      operationId: findCommentById
+      parameters:
+        - name: commentId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+  /api/comments/findAll:
+    get:
+      tags:
+        - comment everything you commented about the posted items
+      summary: Find all comments that have been posted by users  
+      operationId: findAllComments
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
+  /api/client/allusers:
+    get:
+      tags:
+        - Operations about the users of the exchange platform
+      summary: Find all available users  
+      operationId: all
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Client'
+  /api/transactions/deleteAll:
+    delete:
+      tags:
+        - Operations about the transactions of the items between users
+      summary: Delete the information about all transactions made between users  
+      operationId: deleteAllTransactions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+  /api/items/delete/{itemId}:
+    delete:
+      tags:
+        - item Everything about the items on our exchange platform
+      summary: Delete a specific item
+      description: find a specific item by its id and delete it
+      operationId: deleteItem
+      parameters:
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /api/items/delete/all:
+    delete:
+      tags:
+        - item Everything about the items on our exchange platform
+      summary: Delete all items on the platform!
+      description: this operation will delete all items posted on the platform
+      operationId: deleteAllItems
+      responses:
+        '200':
+          description: OK
+  /api/comments/deleteAll:
+    delete:
+      tags:
+        - comment everything you commented about the posted items 
+      summary: Delete all available comments  
+      operationId: deleteAllComments
+      responses:
+        '200':
+          description: OK
+  /api/client/deleteall:
+    delete:
+      tags:
+        - Operations about the users of the exchange platform
+      summary: Delete all users registered on the platform  
+      operationId: deleteAll
+      responses:
+        '200':
+          description: OK
+  /api/client/delete/{clientId}:
+    delete:
+      tags:
+        - Operations about the users of the exchange platform
+      summary: Delete a specific user by id 
+      operationId: delete
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    Client:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        items:
+          type: array
+          writeOnly: true
+          items:
+            $ref: '#/components/schemas/Item'
+        comments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Comment'
+        offeredTransactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Transaction'
+        receivedTransactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Transaction'
+        cgetItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+    Comment:
+      type: object
+      properties:
+        text:
+          type: string
+        item:
+          $ref: '#/components/schemas/Item'
+        client:
+          $ref: '#/components/schemas/Client'
+    Item:
+      required:
+        - itemDescription
+      type: object
+      properties:
+        itemId:
+          type: integer
+          format: int64
+        itemTitle:
+          type: string
+        itemDescription:
+          type: string
+        itemListingDate:
+          type: string
+          format: date
+        itemStatus:
+          type: string
+          enum:
+            - AVAILABLE
+            - NOTAVAILABLE
+        itemCategory:
+          type: string
+          enum:
+            - MUSIC
+            - CLOTHES
+            - ELECTRONICS
+            - FURNITURE
+            - SPORTS
+            - BEAUTIY
+            - TOYS
+            - JEWELRY
+            - PETS
+            - BOOKS
+            - OTHER
+        client:
+          $ref: '#/components/schemas/Client'
+        comments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Comment'
+        transaction:
+          $ref: '#/components/schemas/Transaction'
+        description:
+          type: string
+          writeOnly: true
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        item:
+          $ref: '#/components/schemas/Item'
+        offeringUser:
+          $ref: '#/components/schemas/Client'
+        receivingUser:
+          $ref: '#/components/schemas/Client'
+        status:
+          type: string
+          enum:
+            - PENDING
+            - ACCEPTED
+            - DECLINED
+            - CANCELLED
+            - COMPLETED
+        rating:
+          type: string
+          enum:
+            - POSITIVE
+            - NEGATIVE
+            - NEUTRAL
+        timestamp:
+          type: string
+          format: date
+    CommentUpdateDTO:
+      type: object
+      properties:
+        text:
+          type: string
