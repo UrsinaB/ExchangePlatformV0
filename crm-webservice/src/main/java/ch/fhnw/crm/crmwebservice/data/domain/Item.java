@@ -83,7 +83,7 @@ public class Item {
 		ELECTRONICS,
 		FURNITURE,
 		SPORTS,
-		BEAUTIY,
+		BEAUTY,
 		TOYS,
 		JEWELRY,
 		PETS,
@@ -133,7 +133,7 @@ public class Item {
 		return itemDescription;
 	}
 
-	public void setDescription(String itemDescription) {
+	public void setItemDescription(String itemDescription) {
 		this.itemDescription = itemDescription;
 	}
 
@@ -172,8 +172,17 @@ public class Item {
 		this.client = client;
 	}
 
-	public List<Comment> getComments() {
-		return comments;
+	// public List<Comment> getComments() {
+	// 	return comments;
+	// }
+
+	public String getComments(){
+		String commentString = "";
+		for(Comment c : comments){
+			commentString += c.getText();
+			commentString += "\n";
+		}
+		return commentString;
 	}
 
 	public void setComments(List<Comment> comments) {
