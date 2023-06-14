@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -21,7 +20,7 @@ public class ClientController {
     private ClientService clientService;
 
 
-    @PostMapping("/register")
+    @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Void> postRegister(@RequestBody Client client) {
         try {
             clientService.saveUser(client);
