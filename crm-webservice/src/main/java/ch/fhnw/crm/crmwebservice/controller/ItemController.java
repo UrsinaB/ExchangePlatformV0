@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -46,12 +47,17 @@ public class ItemController {
 
 
     //PUT method to update an existing item in the database by its id -> TESTED WORKS
-    @PutMapping(path = "/{itemId}")
-    public ResponseEntity<Void> putProfile(@RequestBody Item item, @PathVariable(value = "itemId") String itemId) {
+    @PatchMapping(path = "/{itemId}")
+    public ResponseEntity<Void> updateItem(Item item, @PathVariable(value = "itemId") String itemId) {
         try {
-            item.setItemId(Long.parseLong(itemId));
+            Item oldItem = itemService.getItemById(Long.parseLong(itemId));
+            oldItem.setItemCategory(item.getItemCategory());
+            oldItem.setItemTitle(item.getItemTitle());
+            oldItem.setItemDescription(item.getItemDescription());
+            oldItem.setItemStatus(item.getItemStatus());
             itemService.updateItem(item);
         } catch (Exception e) {
+            e.printStackTrace(System.out);
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
         }
         return ResponseEntity.ok().build();

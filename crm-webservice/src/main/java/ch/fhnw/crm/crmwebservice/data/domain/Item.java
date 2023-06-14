@@ -83,7 +83,7 @@ public class Item {
 		ELECTRONICS,
 		FURNITURE,
 		SPORTS,
-		BEAUTIY,
+		BEAUTY,
 		TOYS,
 		JEWELRY,
 		PETS,
@@ -133,7 +133,7 @@ public class Item {
 		return itemDescription;
 	}
 
-	public void setDescription(String itemDescription) {
+	public void setItemDescription(String itemDescription) {
 		this.itemDescription = itemDescription;
 	}
 
