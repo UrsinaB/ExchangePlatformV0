@@ -1,4 +1,4 @@
-![](RackMultipart20230616-1-xha6ee_html_6c26281631587fbe.jpg)
+![](RackMultipart20230616-1-49nti3_html_6c26281631587fbe.jpg)
 
 **Project**  **Website**
 
@@ -38,7 +38,7 @@ Our requirements analysis concluded in the development of Use Cases which are sh
 4. As a [user], I want to create an account so that I can get access to the Exchange Service.
 5. As a [user], I want to edit my profile so that my data is up to date.
 
-### 1.3.2Client/User (Our Suggestions)
+### 1.3.2 Client/User (Our Suggestions)
 
 1. As a [user], I want to receive/send messages, so that I can communicate with others on the site.
 2. As a [user], I want to add items for exchange, so that my goods are available for other users to see.
@@ -177,27 +177,40 @@ _Table 9. Overview Of Non-Functional Requirements Register_
 ### 2.1.1 UC 101 Add Client/ Register
 
 | Use Case ID  | UC 101 Add Client/Register |
+| --- | --- |
 | Description  | The website enables a user to create a profile by registering a username and email |
+| --- | --- |
 | Responsible Actor   | User  |
+| --- | --- |
 | Participating Actor  | - |
+| --- | --- |
 | Trigger  | The User wants to exchange an item   |
+| --- | --- |
 | Preconditions  | -  |
+| --- | --- |
 | Input   | Login data: name, firstName, lastName,email |
+| --- | --- |
 | Scenario  | Main  | Alternative  |
+| --- | --- | --- |
 | 1. User clicks "Register" button  | 1.a User clicks "Login" button   |
+| --- | --- |
 | 1.b User leaves the website |
 | 2. User enters required data | 2.a User leaves the website |
+| --- | --- |
 | - username |
 | - email |
 | - email (2nd entry) |
 | 3. User clicks "Submit" button  | 3.a Registration fails, User is prompted to re-enter email |
+| --- | --- |
 | 3.b User leaves the website  |
 | Results  | User is registered in the database |
+| --- | --- |
 | Postconditions  | User is re-directed to the login page |
+| --- | --- |
 
 _Table 10. UC 101 Add Client/ Register_
 
-### 2.1.2UC 102 Login
+### 2.1.2 UC 102 Login
 
 | Use Case ID  | UC 102 Login |
 | --- | --- |
@@ -230,7 +243,7 @@ _Table 10. UC 101 Add Client/ Register_
 
 _Table 11. UC 102 Login_
 
-### 2.1.3UC 103 Add Item
+### 2.1.3 UC 103 Add Item
 
 | Use Case ID  | UC 103Add an Item |
 | --- | --- |
@@ -267,7 +280,7 @@ _Table 11. UC 102 Login_
 
 _Table 12. UC 103 Add item_
 
-### 2.1.4UC 104 Add Comment
+### 2.1.4 UC 104 Add Comment
 
 | Use Case ID  | UC 104 Add an Item |
 | --- | --- |
@@ -305,7 +318,7 @@ _Table 12. UC 103 Add item_
 
 _Table 13. UC 103 Add Comment_
 
-### 2.1.5UC 105 Add Transaction
+### 2.1.5 UC 105 Add Transaction
 
 | Use Case ID  | UC 105 Exchange Item |
 | --- | --- |
@@ -343,7 +356,7 @@ _Table 13. UC 103 Add Comment_
 
 _Table 14. UC 104 Add Transaction_
 
-### 2.1.6UC 105 View Clients
+### 2.1.6 UC 105 View Clients
 
 | Use Case ID  | UC 105 View Clients  |
 | --- | --- |
@@ -371,7 +384,7 @@ _Table 14. UC 104 Add Transaction_
 
 _Table 15. UC 105 View Clients_
 
-### 2.1.7UC 106 View Clients
+### 2.1.7 UC 106 View Clients
 
 | Use Case ID  | UC 106 View Items |
 | --- | --- |
@@ -399,7 +412,7 @@ _Table 15. UC 105 View Clients_
 
 _Table 16. UC 106 View Items_
 
-### 2.1.8UC 107 View Comments
+### 2.1.8 UC 107 View Comments
 
 | Use Case ID  | UC 107 View Comments |
 | --- | --- |
@@ -427,7 +440,7 @@ _Table 16. UC 106 View Items_
 
 _Table 17. UC 107 View Comments_
 
-### 2.1.9UC 108 View Transactions
+### 2.1.9 UC 108 View Transactions
 
 | Use Case ID  | UC 108 View Transactions |
 | --- | --- |
@@ -455,19 +468,19 @@ _Table 17. UC 107 View Comments_
 
 _Table 18. UC 108 View Transactions_
 
-# 3Business Logic and API design and Implementation
+# 3 Business Logic and API design and Implementation
 
-## 3.1data access
+## 3.1 data access
 
 Data for the Exchange Service is accessible on the private Github repository, [https://github.com/UrsinaB/ExchangePlatformV0](https://github.com/UrsinaB/ExchangePlatformV0). Persistent database data is located on the file, "crm.mv.db". Frontend views were created on and are hosted by Budibase.
 
 There is no security authorization required for the frontend to access the backend. We chose to disable security functions to aid in the technical feasibility of the project's development. We do acknowledge, that without token/session access client authentication after registration is not possible.
 
-## 3.2business logic layers
+## 3.2 business logic layers
 
 The business logic for the Exchange Service was created using Spring Data JPA. We created four classes: Client, Item, Comment, and Transaction. Below is a brief explanation of what information was included in each of the layers in the Spring Boot repository.
 
-### 3.2.1Data Layer
+### 3.2.1 Data Layer
 
 The data layer consists of domains and repositories for each class, along with an Enum class.
 
@@ -475,19 +488,19 @@ The data layer consists of domains and repositories for each class, along with a
 
 **Repository:** Instructions for foreign keys and database table joins.
 
-### 3.2.2Service Layer
+### 3.2.2 Service Layer
 
 The logic for how queries are to be carried out (CRUD operations) when received from the client and data access objects are stored within the service layer.
 
-### 3.2.3Controller
+### 3.2.3 Controller
 
 The Controller allows for the creation of endpoints for the website's views, and the processing of REST API requests. This layer also receives and sends HTTP requests and includes JSON data in the body.
 
-## 3.3API
+## 3.3 API
 
 When HTTP requests and responses are sent between the web browser and the webserver an API is used. REST is a widely used standard for facilitating computer-to-computer communication over the internet. REST includes guidelines for a consistent user interface, client-server communication, stateless data transmission, cacheable data, layered systems, and optional code-on-demand. RESTful APIs are those that adhere to the aforementioned standards.
 
-# 4Frontend implementation
+# 4 Frontend implementation
 
 ## 4.1 Design
 
@@ -495,11 +508,19 @@ The front-end design of the Exchange Service was created on the low code website
 
 The colour scheme of the Exchange Service is based on a 1980s Synthwave colour palette. We chose this fun theme to stand out from the professional pages normally made for school assignments.
 
-## 4.2prototyping
+Our Front end can be found with this link: https://inttech.budibase.app/app/exchangeservice
+
+**Landing Page**
+
+![](RackMultipart20230616-1-49nti3_html_568797af84df6fd4.png)
+
+_Figure 1. Landing Page_
+
+## 4.2 Prototyping
 
 The structure of the website was created directly from our UML model. Inspirations for the layout and navigation came from our own experiences with developing websites in the past. To increase functionality, we had a beta tester review the site and make suggestions.
 
-## 4.3realization of frontend functionality
+## 4.3 Realization of frontend functionality
 
 To interface with the internet, a client is used. Front-end development is used to render web applications on the client. An interface is used to convey server requests and responses.
 
@@ -509,9 +530,9 @@ The body of the HTTP request could include an optional request for a custom payl
 
 After receiving and processing the request, the server formats the result into a response, such as "HTTP/1.1 200 OK." "200 OK" is an HTTP status code; if the web browser returns a 500-level code, a request for a custom payload may be sent back to the server to retry the request.
 
-# 5Demonstrator
+# 5 Demonstrator
 
-## 5.1Integration of frontend and backend
+## 5.1 Integration of frontend and backend
 
 The backend communicates data from the database to the client-side browser. It contains the server and connections to the database.
 
@@ -521,7 +542,7 @@ The backend communicates data from the database to the client-side browser. It c
 
 **Endpoints:** Locations of URI/URL resources used by APIs for accessing those resources
 
-## 5.2consuming REST APIs from the web service
+## 5.2 consuming REST APIs from the web service
 
 Below is an example oftwo endpoint locations of the URI/URL resources used by our APIs (routes) for accessing resources.
 
@@ -534,7 +555,7 @@ Below is an example oftwo endpoint locations of the URI/URL resources used by ou
 
 _Table 19. API Endpoint Reference List_
 
-# 6REFLECTION
+# 6 REFLECTION
 
 Following the rubric of the project's documentation was made easier by having prior experience in website design. Our first few deliverables as a team, such as building a business case, requirements list, and so on, received great feedback. The second stage of the project, creating a usable website structure, proved to be more difficult. First, we had to learn how to program in Java, then we had to learn how to use Github Codespaces, set up version control with a Git repository, and learn how to structure a software architecture into the Spring Boot format.
 
@@ -542,7 +563,51 @@ We are proud of the work that we have done but, if given more time, we would add
 
 We also regret that we found some aspects of Budibase to be too complicated. Unfortunately, most of the endpoints that were created were not implemented in the front end.
 
-# 7References
+# 7 List of Figures
+
+[Figure 1. Landing Page 13](#_Toc137828663)
+
+# 8 List of Tables
+
+[Table 1. Given/When/Then Acceptance Criteria 3](#_Toc137825439)
+
+[_Table 2. Stakeholder Analysis_ 4](#_Toc137825440)
+
+[Table 3. Overview Of Functional Requirements Register 4](#_Toc137825441)
+
+[Table 4. Use Case 100 Client/User 4](#_Toc137825442)
+
+[Table 5. Use Case 200 Admin Requirements 4](#_Toc137825443)
+
+[Table 6. Use Case 300 Website Requirements 5](#_Toc137825444)
+
+[Table 7. Use Case 400 UI/UX Requirements 6](#_Toc137825445)
+
+[Table 8. 500 Server Requirements 6](#_Toc137825446)
+
+[Table 9. Overview Of Non-Functional Requirements Register 6](#_Toc137825447)
+
+[Table 10. UC 101 Add Client/ Register 7](#_Toc137825448)
+
+[Table 11. UC 102 Login 7](#_Toc137825449)
+
+[Table 12. UC 103 Add item 8](#_Toc137825450)
+
+[Table 13. UC 103 Add Comment 8](#_Toc137825451)
+
+[Table 14. UC 104 Add Transaction 9](#_Toc137825452)
+
+[Table 15. UC 105 View Clients 10](#_Toc137825453)
+
+[Table 16. UC 106 View Items 10](#_Toc137825454)
+
+[Table 17. UC 107 View Comments 10](#_Toc137825455)
+
+[Table 18. UC 108 View Transactions 11](#_Toc137825456)
+
+[Table 19. API Endpoint Reference List 13](#_Toc137825457)
+
+# 9 References
 
 Moormann, J., & Palvölgyi, E. Z. (2013). Customer centric business modelling: setting a research agenda. 2013 IEEE 15th Conference on Business Informatics (pp. 173-179). IEEE.
 
