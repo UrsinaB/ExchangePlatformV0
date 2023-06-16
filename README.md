@@ -12,15 +12,15 @@ Devid Montecchiari, Charuta Pande
 
 June 25, 2023
 
-# 1Analysis
+# 1 Analysis
 
-## 1.1Scenario ideation
+## 1.1 Scenario ideation
 
 A user wants to trade items with others via the internet. She requires that the website allows her to register, add items, comment on items, and create transactions.
 
 We have created the Exchange Service as a digital marketplace for the tradeof goods. To offer items for trade, a user must add a new item to the exchange platform. Goods can be exchanged immediately after completingregistration.
 
-## 1.2use case analysis
+## 1.2 Use case analysis
 
 A requirements analysis was conducted to determine the goals of the website. To do so, we first brainstormed ideas for how a user may interact with the site based on our own prior experiences with web shops. Next, we analysed competitor websites, such as the Swiss e-commerce websites galaxus.ch and Ricardo.ch, forrealistic design and functionality ideas. We used the gathered information to create various user stories, which we later developed into a stakeholder analysis.
 
@@ -28,9 +28,9 @@ After considering constraints to the project, such as the project's requirements
 
 Our requirements analysis concluded in the development of Use Cases which are shown in section 1.3 User Story Writing, 1.4 Acceptance Criteria, 1.5 Stakeholder Analysis, and 1.6 Requirements.
 
-## 1.3user story writing
+## 1.3 User story writing
 
-### 1.3.1Client/User (Module Suggestions)
+### 1.3.1 Client/User (Module Suggestions)
 
 1. As a [user], I want to have a Web app so that I can use it on different mobile devices and on desktop computers.
 2. As a [user], I want to see a consistent visual appearance so that I can navigate easily, and it looks consistent.
@@ -48,13 +48,13 @@ Our requirements analysis concluded in the development of Use Cases which are sh
 6. As a [user], I want to search for items that are available for exchange, so that I can see what is available on the site based on my own criteria.
 7. As a [user], I want to exchange my old items for other items that are available for exchange, so that I can complete a transaction.
 
-### 1.3.3Website Administrator
+### 1.3.3 Website Administrator
 
 1. As a Website Administrator, I want to have full stack development authorization access so that I can develop and maintain the website, and database.
 
-## 1.4Acceptance Criteria
+## 1.4 Acceptance Criteria
 
-### 1.4.1Scenario-Oriented (the Given/When/Then template)
+### 1.4.1 Scenario-Oriented (the Given/When/Then template)
 
 | User Story | As a user, I want to register and log-in so that I can join the website |
 | --- | --- |
@@ -86,9 +86,9 @@ _Table 1. Given/When/Then Acceptance Criteria_
 
 _Table 2. Stakeholder Analysis_
 
-## 1.6Requirements
+## 1.6 Requirements
 
-### 1.6.1Overview of Functional Requirements Register
+### 1.6.1 Overview of Functional Requirements Register
 
 | UC | Requirement | Description |
 | --- | --- | --- |
@@ -100,7 +100,7 @@ _Table 2. Stakeholder Analysis_
 
 _Table 3. Overview Of Functional Requirements Register_
 
-#### 1.6.1.1100 Client/User
+#### 1.6.1.1 100 Client/User
 
 | UC | Requirement | Description |
 | --- | --- | --- |
@@ -115,7 +115,7 @@ _Table 3. Overview Of Functional Requirements Register_
 
 _Table 4. Use Case 100 Client/User_
 
-#### 1.6.1.2200 Admin Requirements
+#### 1.6.1.2 200 Admin Requirements
 
 | UC | Requirement | Description |
 | --- | --- | --- |
@@ -126,7 +126,7 @@ _Table 4. Use Case 100 Client/User_
 
 _Table 5. Use Case 200 Admin Requirements_
 
-#### 1.6.1.3300 Website Page Requirements
+#### 1.6.1.3 300 Website Page Requirements
 
 | UC | Requirement | Description |
 | --- | --- | --- |
@@ -142,7 +142,7 @@ _Table 5. Use Case 200 Admin Requirements_
 
 _Table 6. Use Case 300 Website Requirements_
 
-#### 1.6.1.4400 UI/UX Requirements
+#### 1.6.1.4 400 UI/UX Requirements
 
 | UC | Requirement | Description |
 | --- | --- | --- |
@@ -152,7 +152,7 @@ _Table 6. Use Case 300 Website Requirements_
 
 _Table 7. Use Case 400 UI/UX Requirements_
 
-#### 1.6.1.5500 Server Requirements
+#### 1.6.1.5 500 Server Requirements
 
 | UC | Requirement | Description |
 | --- | --- | --- |
@@ -161,7 +161,7 @@ https://github.com/UrsinaB/ExchangePlatformV0 |
 
 _Table 8. 500 Server Requirements_
 
-### 1.6.2Overview of Non-Functional Requirements Register
+### 1.6.2 Overview of Non-Functional Requirements Register
 
 | UC | Requirement | Description |
 | --- | --- | --- |
@@ -170,43 +170,30 @@ _Table 8. 500 Server Requirements_
 
 _Table 9. Overview Of Non-Functional Requirements Register_
 
-# 2Domain Design:
+# 2 Domain Design:
 
-## 2.1Package 100 - Client/User Use Cases
+## 2.1 Package 100 - Client/User Use Cases
 
-### 2.1.1UC 101 Add Client/ Register
+### 2.1.1 UC 101 Add Client/ Register
 
 | Use Case ID  | UC 101 Add Client/Register |
-| --- | --- |
 | Description  | The website enables a user to create a profile by registering a username and email |
-| --- | --- |
 | Responsible Actor   | User  |
-| --- | --- |
 | Participating Actor  | - |
-| --- | --- |
 | Trigger  | The User wants to exchange an item   |
-| --- | --- |
 | Preconditions  | -  |
-| --- | --- |
 | Input   | Login data: name, firstName, lastName,email |
-| --- | --- |
 | Scenario  | Main  | Alternative  |
-| --- | --- | --- |
 | 1. User clicks "Register" button  | 1.a User clicks "Login" button   |
-| --- | --- |
 | 1.b User leaves the website |
 | 2. User enters required data | 2.a User leaves the website |
-| --- | --- |
 | - username |
 | - email |
 | - email (2nd entry) |
 | 3. User clicks "Submit" button  | 3.a Registration fails, User is prompted to re-enter email |
-| --- | --- |
 | 3.b User leaves the website  |
 | Results  | User is registered in the database |
-| --- | --- |
 | Postconditions  | User is re-directed to the login page |
-| --- | --- |
 
 _Table 10. UC 101 Add Client/ Register_
 
