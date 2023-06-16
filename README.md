@@ -1,4 +1,4 @@
-![](RackMultipart20230616-1-49nti3_html_6c26281631587fbe.jpg)
+![](RackMultipart20230616-1-4gd9t9_html_6c26281631587fbe.jpg)
 
 **Project**  **Website**
 
@@ -40,17 +40,17 @@ Our requirements analysis concluded in the development of Use Cases which are sh
 
 ### 1.3.2 Client/User (Our Suggestions)
 
-1. As a [user], I want to receive/send messages, so that I can communicate with others on the site.
-2. As a [user], I want to add items for exchange, so that my goods are available for other users to see.
-3. As a [user], I want to edit the items I have posted for exchange, so that the current condition of my goods are available for other users to see.
-4. As a [user], I want to remove the items that I have posted for exchange, so that my goods are not available for other users to see.
-5. As a [user], I want to view items for exchange, so that I can see what is available on the site.
-6. As a [user], I want to search for items that are available for exchange, so that I can see what is available on the site based on my own criteria.
-7. As a [user], I want to exchange my old items for other items that are available for exchange, so that I can complete a transaction.
+6. As a [user], I want to receive/send messages, so that I can communicate with others on the site.
+7. As a [user], I want to add items for exchange, so that my goods are available for other users to see.
+8. As a [user], I want to edit the items I have posted for exchange, so that the current condition of my goods are available for other users to see.
+9. As a [user], I want to remove the items that I have posted for exchange, so that my goods are not available for other users to see.
+10. As a [user], I want to view items for exchange, so that I can see what is available on the site.
+11. As a [user], I want to search for items that are available for exchange, so that I can see what is available on the site based on my own criteria.
+12. As a [user], I want to exchange my old items for other items that are available for exchange, so that I can complete a transaction.
 
 ### 1.3.3 Website Administrator
 
-1. As a Website Administrator, I want to have full stack development authorization access so that I can develop and maintain the website, and database.
+13. As a Website Administrator, I want to have full stack development authorization access so that I can develop and maintain the website, and database.
 
 ## 1.4 Acceptance Criteria
 
@@ -109,9 +109,10 @@ _Table 3. Overview Of Functional Requirements Register_
 | 103 | Add item | Enables a user to add an item to the website |
 | 104 | Add comment | Enables a user to add a comment to the website |
 | 105 | Add transaction | Enables a user to add a transaction to the website |
-| 106 | View item | Enables a user to view items on the website |
+| 106 | View client | Enables a user to view clients on the website |
 | 107 | View comment | Enables a user to view comments on the website |
 | 108 | View transaction | Enables a user to view transactions on the website |
+| 109 | View item | Enables a user to view items on the website |
 
 _Table 4. Use Case 100 Client/User_
 
@@ -251,8 +252,7 @@ _Table 11. UC 102 Login_
 | --- | --- |
 | Responsible Actor   | User |
 | --- | --- |
-| ParticipatingActor  |
- |
+| ParticipatingActor  | - |
 | --- | --- |
 | Trigger  | The User wants to add an Item |
 | --- | --- |
@@ -263,60 +263,50 @@ _Table 11. UC 102 Login_
 | Scenario  | Main  | Alternative  |
 | --- | --- | --- |
 | 1. User clicks "Add Item" button  | 1.a User leaves the website |
-| --- | --- |
-| 2. User adds an itemFrom the dropdown menus a user selects: |
+| 2. User adds an item From the dropdown menus a user selects:- client, status, category- inputs: Title, Description |
  |
-| --- | --- |
-| - client, status, category - inputs: Title, Description
- |
- |
-| 3. User clicks "Submit" button  | 3.a User leaves the website  |
-| --- | --- |
+|
+ | 3. User clicks "Submit" button  | 3.a User leaves the website  |
+| --- | --- | --- |
 | Results  | User add an item |
 | Postconditions  | The item is successfully added to the database  |
 | --- | --- |
 | The User is re-directed to the View All Items page |
 | --- |
 
-_Table 12. UC 103 Add item_
+_Table 12__. UC 103 Add item_
 
 ### 2.1.4 UC 104 Add Comment
 
-| Use Case ID  | UC 104 Add an Item |
+| Use Case ID  | UC 104 Add an comment |
 | --- | --- |
 | Description  | The website enables a user to add a comment |
 | --- | --- |
 | Responsible Actor   | User |
 | --- | --- |
-| Participating Actor  |
- |
+| Participating Actor  | - |
 | --- | --- |
 | Trigger  | The User wants to add a comment |
 | --- | --- |
 | Preconditions  | The User isregistered with the website |
 | --- | --- |
 | Aitem exists within the database |
-| Input   | Item data: clientId, itemId, text |
+| Input   | Comment data: clientId, itemId, text |
 | --- | --- |
 | Scenario  | Main  | Alternative  |
 | --- | --- | --- |
 | 1. User clicks "Add comment" button  | 1.a User leaves the website |
-| --- | --- |
-| 2. User adds a commentFrom the dropdown menus a user selects: |
- |
-| --- | --- |
-| - client, item - inputs: text
- |
+| 2. User adds a comment From the dropdown menus a user selects: - client, item- inputs: text |
  |
 | 3. User clicks "Submit" button  | 3.a User leaves the website  |
-| --- | --- |
 | Results  | User add a comment |
+| --- | --- |
 | Postconditions  | The comment is successfully added to the database  |
 | --- | --- |
 | The User is re-directed to the View All Comments page |
 | --- |
 
-_Table 13. UC 103 Add Comment_
+_Table 13__. UC 104 Add Comment_
 
 ### 2.1.5 UC 105 Add Transaction
 
@@ -334,31 +324,26 @@ _Table 13. UC 103 Add Comment_
 | --- | --- |
 | Anitem exists within the database |
 | Comments linked to thetradeableitem exists within the database |
-| Input   | Exchange data: itemId, offeringUserId, receivingUserId, status, rating |
+| Input   | Transaction data: itemId, offeringUserId, receivingUserId, status, rating |
 | --- | --- |
 | Scenario  | Main  | Alternative  |
 | --- | --- | --- |
 | 1. User clicks "Add Transaction" button  | 1.a User leaves the website |
-| --- | --- |
-| 2. User creates a transactionFrom the dropdown menus a user selects: |
- |
-| --- | --- |
-| - anitem, seller, buyer, status, rating
- |
+| 2. User creates a transaction From the dropdown menus a user selects:- anitem, seller, buyer, status, rating |
  |
 | 3. User clicks "Submit" button  | 3.a User leaves the website  |
-| --- | --- |
 | Results  | User completesan exchange |
+| --- | --- |
 | Postconditions  | The exchange is successfully added to the database  |
 | --- | --- |
 | The User is re-directed to the View All Transactions page |
 | --- |
 
-_Table 14. UC 104 Add Transaction_
+_Table 14__. UC 105 Add Transaction_
 
-### 2.1.6 UC 105 View Clients
+### 2.1.6 UC 106 View Clients
 
-| Use Case ID  | UC 105 View Clients  |
+| Use Case ID  | UC 106 View Clients  |
 | --- | --- |
 | Description  | The website enables a user to view all clients |
 | --- | --- |
@@ -372,7 +357,7 @@ _Table 14. UC 104 Add Transaction_
 | --- | --- |
 | Other clients exist within the database |
 | --- |
-| Input   |   |
+| Input   |  - |
 | --- | --- |
 | Scenario  | Main  | Alternative  |
 | --- | --- | --- |
@@ -382,37 +367,9 @@ _Table 14. UC 104 Add Transaction_
 | Postconditions  | -  |
 | --- | --- |
 
-_Table 15. UC 105 View Clients_
+_Table 15__. UC 10 View Clients_
 
-### 2.1.7 UC 106 View Clients
-
-| Use Case ID  | UC 106 View Items |
-| --- | --- |
-| Description  | The website enables a user to view all items |
-| --- | --- |
-| Responsible Actor   | User  |
-| --- | --- |
-| Participating Actor  | - |
-| --- | --- |
-| Trigger  | The User wants to view other items of the Exchange Service   |
-| --- | --- |
-| Preconditions  | The User is logged in to the website |
-| --- | --- |
-| Other items exist within the database |
-| --- |
-| Input   |   |
-| --- | --- |
-| Scenario  | Main  | Alternative  |
-| --- | --- | --- |
-| 1. User is re-directed to the View All Items page after adding/updating an item | 1.a User leaves the website  |
-| --- | --- |
-| Results  | User views items |
-| Postconditions  | -  |
-| --- | --- |
-
-_Table 16. UC 106 View Items_
-
-### 2.1.8 UC 107 View Comments
+### 2.1.7 UC 107 View Comments
 
 | Use Case ID  | UC 107 View Comments |
 | --- | --- |
@@ -438,9 +395,9 @@ _Table 16. UC 106 View Items_
 | Postconditions  | -  |
 | --- | --- |
 
-_Table 17. UC 107 View Comments_
+_Table 18. UC 107 View Comments_
 
-### 2.1.9 UC 108 View Transactions
+### 2.1.8 UC 108 View Transactions
 
 | Use Case ID  | UC 108 View Transactions |
 | --- | --- |
@@ -466,17 +423,45 @@ _Table 17. UC 107 View Comments_
 | Postconditions  | -  |
 | --- | --- |
 
-_Table 18. UC 108 View Transactions_
+_Table 19. UC 108 View Transactions_
+
+### 2.1.9 UC 109 View Items
+
+| Use Case ID  | UC 106 View Items |
+| --- | --- |
+| Description  | The website enables a user to view all items |
+| --- | --- |
+| Responsible Actor   | User  |
+| --- | --- |
+| Participating Actor  | - |
+| --- | --- |
+| Trigger  | The User wants to view other items of the Exchange Service   |
+| --- | --- |
+| Preconditions  | The User is logged in to the website |
+| --- | --- |
+| Other items exist within the database |
+| --- |
+| Input   |   |
+| --- | --- |
+| Scenario  | Main  | Alternative  |
+| --- | --- | --- |
+| 1. User is re-directed to the View All Items page after adding/updating an item | 1.a User leaves the website  |
+| --- | --- |
+| Results  | User views items |
+| Postconditions  | -  |
+| --- | --- |
+
+_Table 17. UC 109 View Items_
 
 # 3 Business Logic and API design and Implementation
 
-## 3.1 data access
+## 3.1 Data access
 
 Data for the Exchange Service is accessible on the private Github repository, [https://github.com/UrsinaB/ExchangePlatformV0](https://github.com/UrsinaB/ExchangePlatformV0). Persistent database data is located on the file, "crm.mv.db". Frontend views were created on and are hosted by Budibase.
 
 There is no security authorization required for the frontend to access the backend. We chose to disable security functions to aid in the technical feasibility of the project's development. We do acknowledge, that without token/session access client authentication after registration is not possible.
 
-## 3.2 business logic layers
+## 3.2 Business logic layers
 
 The business logic for the Exchange Service was created using Spring Data JPA. We created four classes: Client, Item, Comment, and Transaction. Below is a brief explanation of what information was included in each of the layers in the Spring Boot repository.
 
@@ -512,7 +497,7 @@ Our Front end can be found with this link: https://inttech.budibase.app/app/exch
 
 **Landing Page**
 
-![](RackMultipart20230616-1-49nti3_html_568797af84df6fd4.png)
+![](RackMultipart20230616-1-4gd9t9_html_1415f61998993c7e.png)
 
 _Figure 1. Landing Page_
 
@@ -542,7 +527,7 @@ The backend communicates data from the database to the client-side browser. It c
 
 **Endpoints:** Locations of URI/URL resources used by APIs for accessing those resources
 
-## 5.2 consuming REST APIs from the web service
+## 5.2 Consuming REST APIs from the web service
 
 Below is an example oftwo endpoint locations of the URI/URL resources used by our APIs (routes) for accessing resources.
 
@@ -553,7 +538,7 @@ Below is an example oftwo endpoint locations of the URI/URL resources used by ou
 | **GET** | /api/items/all | View all clients | Returns all items from the database |
 | **POST** | /api/comments/create/{itemId}/{clientId} | Add a comment | Receives requested data from the Add Comment form and creates a new entry in the comments table of the database |
 
-_Table 19. API Endpoint Reference List_
+_Table 20. API Endpoint Reference List_
 
 # 6 REFLECTION
 
@@ -569,43 +554,43 @@ We also regret that we found some aspects of Budibase to be too complicated. Unf
 
 # 8 List of Tables
 
-[Table 1. Given/When/Then Acceptance Criteria 3](#_Toc137825439)
+[Table 1. Given/When/Then Acceptance Criteria 3](#_Toc137831689)
 
-[_Table 2. Stakeholder Analysis_ 4](#_Toc137825440)
+[_Table 2. Stakeholder Analysis_ 4](#_Toc137831690)
 
-[Table 3. Overview Of Functional Requirements Register 4](#_Toc137825441)
+[Table 3. Overview Of Functional Requirements Register 4](#_Toc137831691)
 
-[Table 4. Use Case 100 Client/User 4](#_Toc137825442)
+[Table 4. Use Case 100 Client/User 4](#_Toc137831692)
 
-[Table 5. Use Case 200 Admin Requirements 4](#_Toc137825443)
+[Table 5. Use Case 200 Admin Requirements 4](#_Toc137831693)
 
-[Table 6. Use Case 300 Website Requirements 5](#_Toc137825444)
+[Table 6. Use Case 300 Website Requirements 5](#_Toc137831694)
 
-[Table 7. Use Case 400 UI/UX Requirements 6](#_Toc137825445)
+[Table 7. Use Case 400 UI/UX Requirements 6](#_Toc137831695)
 
-[Table 8. 500 Server Requirements 6](#_Toc137825446)
+[Table 8. 500 Server Requirements 6](#_Toc137831696)
 
-[Table 9. Overview Of Non-Functional Requirements Register 6](#_Toc137825447)
+[Table 9. Overview Of Non-Functional Requirements Register 6](#_Toc137831697)
 
-[Table 10. UC 101 Add Client/ Register 7](#_Toc137825448)
+[Table 10. UC 101 Add Client/ Register 7](#_Toc137831698)
 
-[Table 11. UC 102 Login 7](#_Toc137825449)
+[Table 11. UC 102 Login 7](#_Toc137831699)
 
-[Table 12. UC 103 Add item 8](#_Toc137825450)
+[_Table 12__. UC 103 Add item_ 8](#_Toc137831700)
 
-[Table 13. UC 103 Add Comment 8](#_Toc137825451)
+[_Table 13__. UC 104 Add Comment_ 8](#_Toc137831701)
 
-[Table 14. UC 104 Add Transaction 9](#_Toc137825452)
+[_Table 14__. UC 105 Add Transaction_ 9](#_Toc137831702)
 
-[Table 15. UC 105 View Clients 10](#_Toc137825453)
+[_Table 15__. UC 10 View Clients_ 10](#_Toc137831703)
 
-[Table 16. UC 106 View Items 10](#_Toc137825454)
+[Table 18. UC 107 View Comments 10](#_Toc137831704)
 
-[Table 17. UC 107 View Comments 10](#_Toc137825455)
+[Table 19. UC 108 View Transactions 10](#_Toc137831705)
 
-[Table 18. UC 108 View Transactions 11](#_Toc137825456)
+[Table 17. UC 109 View Items 11](#_Toc137831706)
 
-[Table 19. API Endpoint Reference List 13](#_Toc137825457)
+[Table 20. API Endpoint Reference List 14](#_Toc137831707)
 
 # 9 References
 
