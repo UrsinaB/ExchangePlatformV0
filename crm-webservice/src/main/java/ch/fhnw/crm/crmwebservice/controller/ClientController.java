@@ -30,6 +30,11 @@ public class ClientController {
         return ResponseEntity.ok().build();
     }
 
+    @PutMapping("/updateClient")
+    public Client updateClient(@RequestBody Client client) {
+        return clientService.updateClient(client);
+    }
+
     @GetMapping("/allusers")
     public List<Client> all() {
        return clientService.getAllUsers();

@@ -41,6 +41,14 @@ public class ClientService {
         clientRepository.save(client);
     }
 
+    public Client updateClient(Client client){
+        Client existingClient = clientRepository.findById(client.getId()).orElse(null);
+        existingClient.setName(client.getName());
+        existingClient.setFirstName(client.getFirstName());
+        existingClient.setLastName(client.getLastName());
+        existingClient.setEmail(client.getEmail());
+        return clientRepository.save(existingClient);
+    }
     
     public void deleteUser(Long clientId)
 	{
