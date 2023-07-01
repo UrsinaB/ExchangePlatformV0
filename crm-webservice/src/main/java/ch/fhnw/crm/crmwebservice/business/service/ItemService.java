@@ -65,7 +65,10 @@ public Item updateItem(Item item){
     if(item.getItemCategory() != null){
         existingItem.setItemCategory(item.getItemCategory());
     }
-    existingItem.setItemStatus(item.getItemStatus());
+    if(item.getItemStatus() != null){
+        existingItem.setItemStatus(item.getItemStatus());
+    }
+
     return itemRepository.save(existingItem);
 }
 
