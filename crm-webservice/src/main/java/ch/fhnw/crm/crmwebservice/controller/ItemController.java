@@ -119,7 +119,6 @@ public class ItemController {
         return new ResponseEntity<>(items, HttpStatus.OK);
     }
 
-
     //GET method to retriev all items that belong to a specific item category -> TESTED WORKS
      @GetMapping(path = "/category/{itemCategory}", produces = "application/json")
     public ResponseEntity<List<Item>> getItemByCategory(@PathVariable(value = "itemCategory") ItemCategory itemCategory) {

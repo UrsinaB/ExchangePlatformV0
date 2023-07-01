@@ -172,8 +172,17 @@ public class Item {
 		this.client = client;
 	}
 
-	public List<Comment> getComments() {
-		return comments;
+	// public List<Comment> getComments() {
+	// 	return comments;
+	// }
+
+	public String getComments(){
+		String commentString = "";
+		for(Comment c : comments){
+			commentString += c.getText();
+			commentString += "\n";
+		}
+		return commentString;
 	}
 
 	public void setComments(List<Comment> comments) {
