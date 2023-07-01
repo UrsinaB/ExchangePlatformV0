@@ -2654,6 +2654,7 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 57 more
 2023-06-13 18:35:56 database: flush
+ 
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -2834,7 +2835,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 53 more
+
 2023-06-13 18:36:01 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -2909,7 +2912,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 57 more
+
 2023-06-13 18:44:40 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -3019,7 +3024,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 92 more
+
 2023-06-13 18:44:42 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -3090,7 +3097,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 53 more
+
 2023-06-13 18:44:45 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -3165,7 +3174,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 57 more
+
 2023-06-13 18:45:07 database: flush
+ 
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -3275,7 +3286,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 92 more
+
 2023-06-13 18:45:09 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -3346,7 +3359,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 53 more
+
 2023-06-13 18:45:11 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -3421,7 +3436,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 57 more
+
 2023-06-13 19:40:11 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -3531,7 +3548,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 92 more
+
 2023-06-13 19:40:13 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -3602,7 +3621,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 53 more
+
 2023-06-13 19:40:15 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -3677,7 +3698,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 57 more
+
 2023-06-14 04:57:32 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -3787,7 +3810,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 92 more
+
 2023-06-14 04:57:35 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -3858,7 +3883,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 53 more
+
 2023-06-14 04:57:38 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -3933,7 +3960,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 57 more
+
 2023-06-14 05:12:17 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -4043,7 +4072,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 92 more
+
 2023-06-14 05:12:19 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -4114,7 +4145,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 53 more
+
 2023-06-14 05:12:22 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -4189,7 +4222,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 57 more
+
 2023-06-14 05:33:21 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -4370,6 +4405,7 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 53 more
+
 2023-06-14 05:33:25 database: flush
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
@@ -4445,7 +4481,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 57 more
+
 2023-06-14 05:58:30 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -4555,7 +4593,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 92 more
+
 2023-06-14 05:58:32 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
@@ -4626,7 +4666,9 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/Exch
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 53 more
+
 2023-06-14 05:58:35 database: flush
+
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/ExchangePlatformV0/data/crm.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)

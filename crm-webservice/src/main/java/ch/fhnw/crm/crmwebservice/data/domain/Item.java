@@ -66,7 +66,7 @@ public class Item {
     //enum for item status
 
     public enum ItemStatus {
-        AVAILABLE, NOTAVAILABLE
+        AVAILABLE, UNAVAILABLE
 }
 
     // declaring the attribute as an enumeration

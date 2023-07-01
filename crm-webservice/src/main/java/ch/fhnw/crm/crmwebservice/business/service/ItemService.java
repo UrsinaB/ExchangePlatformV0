@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -47,10 +48,25 @@ public Item createItem(@Valid Item item, Long clientId) throws Exception {
         return itemRepository.findAll();
     }
 
-        //update item
-         public void updateItem(Item item) {
-        itemRepository.save(item);
+        
+    // public void updateItem(Item item) {
+    //     itemRepository.save(item);
+    // }
+
+//update item
+public Item updateItem(Item item){
+    Item existingItem = itemRepository.findById(item.getItemId()).orElse(null);
+    if(item.getItemTitle() != ""){
+        existingItem.setItemTitle(item.getItemTitle());    
     }
+    if(item.getItemDescription() != ""){
+        existingItem.setItemDescription(item.getItemDescription());
+    }
+    existingItem.setItemCategory(item.getItemCategory());
+    existingItem.setItemStatus(item.getItemStatus());
+
+    return itemRepository.save(existingItem);
+}
 
         //delete item
         public void deleteItem(Long itemId) {
@@ -106,10 +122,7 @@ public Item createItem(@Valid Item item, Long clientId) throws Exception {
         // find all items assigned to a specific client
         public List<Item> getItemsbyClient(Long clientId) {
             return itemRepository.findByClientId(clientId);
-
         }
-
-
 
         public Item getItemById(Long itemId) {
             return itemRepository.findByItemId(itemId);
