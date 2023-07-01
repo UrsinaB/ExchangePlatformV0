@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ch.fhnw.crm.crmwebservice.data.domain.Client;
 import ch.fhnw.crm.crmwebservice.data.domain.Comment;
 import ch.fhnw.crm.crmwebservice.data.domain.Transaction;
 import ch.fhnw.crm.crmwebservice.data.repository.ClientRepository;
@@ -63,5 +64,26 @@ public Transaction createTransaction(@Valid Transaction transaction, Long itemId
     public List<Transaction> findTransactionByReceivingUserId(Long receivingUserId) {
         return transactionRepository.findByReceivingUser(receivingUserId);
     }
+
+    public void deleteAllTransactions(){
+        transactionRepository.deleteAll();
+    }
+
+    public Transaction updateTransaction(Transaction transaction){
+        System.out.println("Updating transaction!");
+    try{
+        Transaction existingTransaction = transactionRepository.findById(transaction.getId()).orElse(null);
+        existingTransaction.setReceivingUser(transaction.getReceivingUser());
+        existingTransaction.setOfferingUser(transaction.getOfferingUser());
+        existingTransaction.setItem(transaction.getItem());
+        existingTransaction.setStatus(transaction.getStatus());
+        existingTransaction.setRating(transaction.getRating());
+        return transactionRepository.save(existingTransaction);
+    } catch(Exception e){
+        System.err.println(e.getStackTrace());
+        throw e;
+    }
+
+} 
 }
  

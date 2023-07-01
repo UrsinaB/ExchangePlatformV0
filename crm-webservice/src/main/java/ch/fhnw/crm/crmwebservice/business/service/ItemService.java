@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -55,9 +56,15 @@ public Item createItem(@Valid Item item, Long clientId) throws Exception {
 //update item
 public Item updateItem(Item item){
     Item existingItem = itemRepository.findById(item.getItemId()).orElse(null);
-    existingItem.setItemTitle(item.getItemTitle());
-    existingItem.setItemDescription(item.getItemDescription());
-    existingItem.setItemCategory(item.getItemCategory());
+    if(item.getItemTitle() != ""){
+        existingItem.setItemTitle(item.getItemTitle());    
+    }
+    if(item.getItemDescription() != ""){
+        existingItem.setItemDescription(item.getItemDescription());
+    }
+    if(item.getItemCategory() != null){
+        existingItem.setItemCategory(item.getItemCategory());
+    }
     existingItem.setItemStatus(item.getItemStatus());
     return itemRepository.save(existingItem);
 }

@@ -9,9 +9,7 @@ import org.springframework.validation.annotation.Validated;
 
 import ch.fhnw.crm.crmwebservice.data.domain.Client;
 import ch.fhnw.crm.crmwebservice.data.repository.ClientRepository;
-
-
-
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import jakarta.validation.Validator;
 
@@ -42,23 +40,32 @@ public class ClientService {
     }
 
     public Client updateClient(Client client){
-        Client existingClient = clientRepository.findById(client.getId()).orElse(null);
-        existingClient.setName(client.getName());
-        existingClient.setFirstName(client.getFirstName());
-        existingClient.setLastName(client.getLastName());
-        existingClient.setEmail(client.getEmail());
-        return clientRepository.save(existingClient);
+        try{
+            Client existingClient = clientRepository.findById(client.getId()).orElse(null);
+            if(client.getName() != ""){
+                existingClient.setName(client.getName());
+            }
+            if(client.getFirstName() != ""){
+                existingClient.setFirstName(client.getFirstName());
+            }
+            if(client.getLastName() != ""){
+                existingClient.setLastName(client.getLastName());
+            }
+            if(client.getEmail() != ""){
+                existingClient.setEmail(client.getEmail());
+            }
+            return clientRepository.save(existingClient);
+        } catch(Exception e){
+            System.err.println(e.getStackTrace());
+            throw e;
+        }
+
     }
     
-    public void deleteUser(Long clientId) {
+    public void deleteUser(Long clientId)
+	{
 		clientRepository.deleteById(clientId);
 	}
-
-    // public void deleteClient(Client client){
-    //     Client existingClient = clientRepository.findById(client.getId()).orElse(null);
-	// 	clientRepository.delete(existingClient);
-	// }
-	
 
 	public List<Client> getAllUsers() {
         return clientRepository.findAll();

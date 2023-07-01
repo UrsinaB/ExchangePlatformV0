@@ -4,15 +4,20 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import ch.fhnw.crm.crmwebservice.business.service.TransactionService;
+import ch.fhnw.crm.crmwebservice.data.domain.Client;
 import ch.fhnw.crm.crmwebservice.data.domain.Comment;
 import ch.fhnw.crm.crmwebservice.data.domain.Transaction;
 
@@ -52,10 +57,28 @@ public ResponseEntity<List<Transaction>> findTransactionByOfferingUserId(@PathVa
 
 }
 
+@DeleteMapping(path = "/deleteAll")
+public ResponseEntity<Void> deleteAllTransactions() {
+    try {
+        transactionService.deleteAllTransactions();
+    } catch (Exception e) {
+        System.out.println(e.getStackTrace());
+        throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
+    }
+    return ResponseEntity.ok().build();
+}
+
 // find all transactions by the id of the receiving user
 @GetMapping(path = "/findByReceivingUserId/{receivingUserId}", produces = "application/json")
 public ResponseEntity<List<Transaction>> findTransactionByReceivingUserId(@PathVariable (value = "receivingUserId") Long receivingUserId) {
     List<Transaction> transactions = transactionService.findTransactionByReceivingUserId(receivingUserId);
     return new ResponseEntity<>(transactions, HttpStatus.OK);
 }
+
+@PatchMapping("/updateTransaction")
+public Transaction updateTransaction(@RequestBody Transaction transaction) {
+    return transactionService.updateTransaction(transaction);
+}
+
+
 }

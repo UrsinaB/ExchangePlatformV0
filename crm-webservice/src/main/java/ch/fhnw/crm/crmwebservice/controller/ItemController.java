@@ -44,7 +44,7 @@ public class ItemController {
         return ResponseEntity.ok(item);
     }
 
-    @PutMapping("/updateItem")
+    @PatchMapping("/updateItem")
     public Item updateItem(@RequestBody Item item) {
         return itemService.updateItem(item);
     }

@@ -56,11 +56,7 @@ public class ClientController {
         return ResponseEntity.ok().build();
     }
 
-    // // delete client by Id
-    // @DeleteMapping("/delete/{clientId}")
-    // public void deleteUser (Long clientId) {
-    //     clientService.deleteUser(clientId);
-    // }
+  
 
 //delete all clients
     @DeleteMapping("/deleteall")

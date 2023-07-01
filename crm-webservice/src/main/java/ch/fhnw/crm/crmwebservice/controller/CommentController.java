@@ -84,10 +84,12 @@ public class CommentController {
     @GetMapping(path = "/findAll", produces = "application/json")
 public ResponseEntity<List<Comment>> findAllComments() {
     List<Comment> comments = commentService.findAllComments();
+    for(Comment c : comments){
+        System.out.println(c.getClient().getFirstName());
+    }
     return new ResponseEntity<>(comments, HttpStatus.OK);
 }
-  
-
+    
     public static class CommentUpdateDTO {
         private String text;
 
