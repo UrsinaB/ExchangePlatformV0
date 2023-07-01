@@ -50,10 +50,14 @@ public class ClientService {
         return clientRepository.save(existingClient);
     }
     
-    public void deleteUser(Long clientId)
-	{
+    public void deleteUser(Long clientId) {
 		clientRepository.deleteById(clientId);
 	}
+
+    // public void deleteClient(Client client){
+    //     Client existingClient = clientRepository.findById(client.getId()).orElse(null);
+	// 	clientRepository.delete(existingClient);
+	// }
 	
 
 	public List<Client> getAllUsers() {

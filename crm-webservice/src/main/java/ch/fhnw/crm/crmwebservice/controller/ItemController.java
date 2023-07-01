@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import ch.fhnw.crm.crmwebservice.business.service.ItemService;
+import ch.fhnw.crm.crmwebservice.data.domain.Client;
 import ch.fhnw.crm.crmwebservice.data.domain.Item;
 import ch.fhnw.crm.crmwebservice.data.domain.Item.ItemCategory;
 import io.swagger.v3.oas.annotations.Hidden;
@@ -43,25 +44,30 @@ public class ItemController {
         return ResponseEntity.ok(item);
     }
 
-
-
-
-    //PUT method to update an existing item in the database by its id -> TESTED WORKS
-    @PatchMapping(path = "/{itemId}")
-    public ResponseEntity<Void> updateItem(Item item, @PathVariable(value = "itemId") String itemId) {
-        try {
-            Item oldItem = itemService.getItemById(Long.parseLong(itemId));
-            oldItem.setItemCategory(item.getItemCategory());
-            oldItem.setItemTitle(item.getItemTitle());
-            oldItem.setItemDescription(item.getItemDescription());
-            oldItem.setItemStatus(item.getItemStatus());
-            itemService.updateItem(item);
-        } catch (Exception e) {
-            e.printStackTrace(System.out);
-            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
-        }
-        return ResponseEntity.ok().build();
+    @PutMapping("/updateItem")
+    public Item updateItem(@RequestBody Item item) {
+        return itemService.updateItem(item);
     }
+
+
+
+
+    // //Update an existing item in the database by its id -> TESTED WORKS
+    // @PatchMapping(path = "/{itemId}")
+    // public ResponseEntity<Void> updateItem(Item item, @PathVariable(value = "itemId") String itemId) {
+    //     try {
+    //         Item oldItem = itemService.getItemById(Long.parseLong(itemId));
+    //         oldItem.setItemCategory(item.getItemCategory());
+    //         oldItem.setItemTitle(item.getItemTitle());
+    //         oldItem.setItemDescription(item.getItemDescription());
+    //         oldItem.setItemStatus(item.getItemStatus());
+    //         itemService.updateItem(item);
+    //     } catch (Exception e) {
+    //         e.printStackTrace(System.out);
+    //         throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
+    //     }
+    //     return ResponseEntity.ok().build();
+    // }
     
 
     //DELETE method to delete an existing item from the database by its id -> TESTED WORKS
