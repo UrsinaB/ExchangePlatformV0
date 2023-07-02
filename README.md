@@ -12,7 +12,7 @@ Devid Montecchiari, Charuta Pande
 
 July 2, 2023
 
-# 1Analysis
+# 1 Analysis
 
 ## 1.1 Scenario Ideation
 
@@ -46,12 +46,12 @@ Our requirements analysis concluded in the development of Use Cases which are sh
 9. As a user, I want to view items for exchange, so that I can see what is available on the site.
 10. As a user, I want to exchange my old items for other items that are available for exchange, so that I can complete a transaction.
 
-### 1.3.3Website Administrator
+### 1.3.3 Website Administrator
 
 11. As a Website Administrator, I want to have full stack development authorization access so that I can develop and maintain the website, and database.
 12. As a Website Administrator, I want to have the ability to delete all entities on the website.
 
-## 1.4Acceptance Criteria
+## 1.4 Acceptance Criteria
 
 ### 1.4.1 Scenario-Oriented (the Given/When/Then template)
 
@@ -234,8 +234,6 @@ _Table 10. UC 101 Add Client/ Register_
 | --- | --- | --- |
 | 1. User clicks "Add Item" button  | 1.a User leaves the website |
 | 2. User adds an item From the dropdown menus a user selects:- client, status, category- inputs: Title, Description |
-|
-|
 | 3. User clicks "Submit" button  | 3.a User leaves the website  |
 | --- | --- | --- |
 | Results  | User add an item |
