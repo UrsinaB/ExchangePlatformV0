@@ -1,6 +1,6 @@
-![](RackMultipart20230702-1-ghnpa5_html_6c26281631587fbe.jpg)
+![](RackMultipart20230702-1-ia5zht_html_6c26281631587fbe.jpg)
 
-**Project**  **Website**
+**Website Project: The Exchange Service**
 
 Ursina Berther and Sherdel Käppler
 
@@ -10,10 +10,9 @@ S.23 IT Project
 
 Devid Montecchiari, Charuta Pande
 
-June 25, 2023
+July 2, 2023
 
-
-# 1 Analysis
+# 1Analysis
 
 ## 1.1 Scenario Ideation
 
@@ -37,7 +36,7 @@ Our requirements analysis concluded in the development of Use Cases which are sh
 2. As a user, I want to see a consistent visual appearance so that I can navigate easily, and it looks consistent.
 3. As a user, I want to use list views so that I can view all data available on the site.
 4. As a user, I want to create an account so that I can get access to the Exchange Service.
-5. As a user, I want to edit my profile so that my data is up to date.
+5. As a user, I want to edit my account so that my data is up to date.
 
 ### 1.3.2 Client/User (Our Suggestions)
 
@@ -45,29 +44,27 @@ Our requirements analysis concluded in the development of Use Cases which are sh
 7. As a user, I want to add items for exchange, so that my goods are available for other users to see.
 8. As a user, I want to edit the items I have posted for exchange, so that the current condition of my goods are available for other users to see.
 9. As a user, I want to view items for exchange, so that I can see what is available on the site.
-10. As a user, I want to search for items that are available for exchange, so that I can see what is available on the site based on my own criteria.
-11. As a user, I want to exchange my old items for other items that are available for exchange, so that I can complete a transaction.
+10. As a user, I want to exchange my old items for other items that are available for exchange, so that I can complete a transaction.
 
-### 1.3.3 Website Administrator
+### 1.3.3Website Administrator
 
-12. As a Website Administrator, I want to have full stack development authorization access so that I can develop and maintain the website, and database.
+11. As a Website Administrator, I want to have full stack development authorization access so that I can develop and maintain the website, and database.
+12. As a Website Administrator, I want to have the ability to delete all entities on the website.
 
-## 1.4 Acceptance Criteria
+## 1.4Acceptance Criteria
 
 ### 1.4.1 Scenario-Oriented (the Given/When/Then template)
 
-| User Story | As a user, I want to register and log-in so that I can join the website |
+| User Story | As a user, I want to register so that I can join the website |
 | --- | --- |
 | Use Case ID | UC 101 Register |
-| Scenario | Create a profile by registering a username and email |
-| Given   | The user navigates to the log-in page |
+| Scenario | Create an account by registering a username and email |
+| Given   | The user navigates to the home page |
 | When | The user selects \<Register\> option |
 | And | The user enters registration data: username, email and email (2nd entry) |
 | And | The user selects \<submit\> button |
 | Then | The system creates an entry in the clients table of the database by inserting the form inputs, name and email |
-| Then | The system re-directs the user to the log-in page |
-| When  | The user selects \<log-in\> option |
-| And | The user enters login data: username and email   |
+| Then | The system re-directs the user to the View clients page |
 
 _Table 1. Given/When/Then Acceptance Criteria_
 
@@ -104,15 +101,14 @@ _Table 3. Overview Of Functional Requirements Register_
 
 | UC | Requirement | Description |
 | --- | --- | --- |
-| 101 | Add Client/Register | Enables a user to create a profile by registering a username and email |
-| 102 | Login | Enables a user to login to the website |
-| 103 | Add item | Enables a user to add an item to the website |
-| 104 | Add comment | Enables a user to add a comment to the website |
-| 105 | Add transaction | Enables a user to add a transaction to the website |
-| 106 | View client | Enables a user to view clients on the website |
-| 107 | View comment | Enables a user to view comments on the website |
-| 108 | View transaction | Enables a user to view transactions on the website |
-| 109 | View item | Enables a user to view items on the website |
+| 101 | Add Client/Register | Enables a user to create an account by registering a username & email |
+| 102 | Add Item | Enables a user to add an item to the website |
+| 103 | Add Comment | Enables a user to add a comment to the website |
+| 104 | Add Transaction | Enables a user to add a transaction to the website |
+| 105 | View Client | Enables a user to view clients on the website |
+| 106 | View Comment | Enables a user to view comments on the website |
+| 107 | View Transaction | Enables a user to view transactions on the website |
+| 108 | View Item | Enables a user to view items on the website |
 
 _Table 4. Use Case 100 Client/User_
 
@@ -120,26 +116,33 @@ _Table 4. Use Case 100 Client/User_
 
 | UC | Requirement | Description |
 | --- | --- | --- |
-| 201 | Delete clients | Enables an admin to delete clients on the website |
-| 202 | Delete items | Enables an admin to delete items on the website |
-| 203 | Delete comments | Enables an admin to delete comment son the website |
-| 204 | Delete transactions | Enables an admin to delete transactions on the website |
+| 201 | Delete Clients | Enables an admin to delete clients on the website |
+| 202 | Delete Items | Enables an admin to delete items on the website |
+| 203 | Delete Comments | Enables an admin to delete comment son the website |
+| 204 | Delete Transactions | Enables an admin to delete transactions on the website |
 
 _Table 5. Use Case 200 Admin Requirements_
 
-#### 1.6.1.3 300 Website Page Requirements
+#### 1.6.1.3 300 Website Views Requirements
 
 | UC | Requirement | Description |
 | --- | --- | --- |
-| 301 | Landing | The first page viewed when entering the website |
-| 302 | Login | Enables a user to enter a user name and email |
-| 303 | Add Client/Register | Enables a user to register a username and email |
-| 304 | User Profile | Enables a user to input item data, send/receive messages and view their items' status |
-| 305 | Exchange | Enables a user to search and view items |
-| 306 | Admin | Enables the admin to delete all use cases |
-| 307 | Add item | Enables a user to add an item to the website |
-| 308 | Add comment | Enables a user to add a comment to the website |
-| 309 | Add transaction | Enables a user to add a transaction to the website |
+| 301 | Home | The first page viewed when entering the website |
+| 302 | About Us | Enables a user to view information about the site |
+| 303 | Exchange | Enables a user to search and view items |
+| 304 | Add Client/Register | Enables a user to register a username and email |
+| 305 | Add Item | Enables a user to add an item to the website |
+| 306 | Add Comment | Enables a user to add a comment to the website |
+| 307 | Add Transaction | Enables a user to view all transactions |
+| 308 | View Clients | Enables a user to view all clients |
+| 309 | View Items | Enables a user to view all items |
+| 310 | View Comments | Enables a user to view all comments |
+| 311 | View Transactions | Enables a user to view a transaction |
+| 312 | Update Client | Enables a user to update a client |
+| 313 | Update Item | Enables a user to update an item |
+| 314 | Update Comment | Enables a user to update a comment |
+| 315 | Update Transaction | Enables a user to update a transaction |
+| 316 | Admin | Enables the admin to delete all use cases |
 
 _Table 6. Use Case 300 Website Requirements_
 
@@ -147,7 +150,7 @@ _Table 6. Use Case 300 Website Requirements_
 
 | UC | Requirement | Description |
 | --- | --- | --- |
-| 401 | Image | Image is always displayed on the left side of the page except on the landing page |
+| 401 | Image | Image is always displayed on the left side of the page except on the home and view pages |
 | 402 | Page Links | Links to the next useful page are displayed near the submission buttons |
 | 403 | Error Dialog | Error warning such as, "Are you sure you want to delete this item." are shown to assist the user |
 
@@ -171,15 +174,15 @@ _Table 8. 500 Server Requirements_
 
 _Table 9. Overview Of Non-Functional Requirements Register_
 
-# 2 Domain Design:
+# 2 Domain Design
 
 ## 2.1 Package 100 - Client/User Use Cases
 
-### 2.1. 1UC 101 Add Client/ Register
+### 2.1.1 UC 101 Add Client/ Register
 
 | Use Case ID  | UC 101 Add Client/Register |
 | --- | --- |
-| Description  | The website enables a user to create a profile by registering a username and email |
+| Description  | The website enables a user to create an account by registering a username and email |
 | --- | --- |
 | Responsible Actor   | User  |
 | --- | --- |
@@ -189,11 +192,11 @@ _Table 9. Overview Of Non-Functional Requirements Register_
 | --- | --- |
 | Preconditions  | -  |
 | --- | --- |
-| Input   | Login data: name, firstName, lastName,email |
+| Input   | Registration data: name, firstName, lastName,email |
 | --- | --- |
 | Scenario  | Main  | Alternative  |
 | --- | --- | --- |
-| 1. User clicks "Register" button  | 1.a User clicks "Login" button   |
+| 1. User clicks "Register" button  | 1.a User clicks "Add Client" button   |
 | --- | --- |
 | 1.b User leaves the website |
 | 2. User enters required data | 2.a User leaves the website |
@@ -206,47 +209,14 @@ _Table 9. Overview Of Non-Functional Requirements Register_
 | 3.b User leaves the website  |
 | Results  | User is registered in the database |
 | --- | --- |
-| Postconditions  | User is re-directed to the login page |
+| Postconditions  | User is re-directed to the "View Clients" page |
 | --- | --- |
 
 _Table 10. UC 101 Add Client/ Register_
 
-### 2.1.2 UC 102 Login
+### 2.1.2 UC 102 Add Item
 
-| Use Case ID  | UC 102 Login |
-| --- | --- |
-| Description  | The website enables a user to log in to the website |
-| --- | --- |
-| Responsible Actor   | User  |
-| --- | --- |
-| Participating Actor  | - |
-| --- | --- |
-| Trigger  | The User wants to make an exchange or view their profile |
-| --- | --- |
-| Preconditions  | The User is registered and exists in the database |
-| --- | --- |
-| Input   | Login data: username, email |
-| --- | --- |
-| Scenario  | Main  | Alternative  |
-| --- | --- | --- |
-| 1. User clicks "Login" button  | 1.a User leaves the website |
-| --- | --- |
-| 2. User enters required data |   |
-| --- | --- |
-| - username |
-| - User leaves the website |
-| 3. User clicks "Submit" button  | 3.a User leaves the website  |
-| --- | --- |
-| Results  | User is re-directed to their profile page |
-| Postconditions  |
- |
-| --- | --- |
-
-_Table 11. UC 102 Login_
-
-### 2.1.3 UC 103 Add Item
-
-| Use Case ID  | UC 103Add an Item |
+| Use Case ID  | UC 102Add an Item |
 | --- | --- |
 | Description  | The website enables a user to add an Item |
 | --- | --- |
@@ -264,6 +234,8 @@ _Table 11. UC 102 Login_
 | --- | --- | --- |
 | 1. User clicks "Add Item" button  | 1.a User leaves the website |
 | 2. User adds an item From the dropdown menus a user selects:- client, status, category- inputs: Title, Description |
+|
+|
 | 3. User clicks "Submit" button  | 3.a User leaves the website  |
 | --- | --- | --- |
 | Results  | User add an item |
@@ -272,11 +244,11 @@ _Table 11. UC 102 Login_
 | The User is re-directed to the View All Items page |
 | --- |
 
-_Table 12__. UC 103 Add item_
+_Table 12__. UC 102 Add item_
 
-### 2.1.4 UC 104 Add Comment
+### 2.1.3 UC 103 Add Comment
 
-| Use Case ID  | UC 104 Add an comment |
+| Use Case ID  | UC 103Add an comment |
 | --- | --- |
 | Description  | The website enables a user to add a comment |
 | --- | --- |
@@ -295,6 +267,7 @@ _Table 12__. UC 103 Add item_
 | --- | --- | --- |
 | 1. User clicks "Add comment" button  | 1.a User leaves the website |
 | 2. User adds a comment From the dropdown menus a user selects: - client, item- inputs: text |
+|
 | 3. User clicks "Submit" button  | 3.a User leaves the website  |
 | Results  | User add a comment |
 | --- | --- |
@@ -303,11 +276,11 @@ _Table 12__. UC 103 Add item_
 | The User is re-directed to the View All Comments page |
 | --- |
 
-_Table 13__. UC 104 Add Comment_
+_Table 13__. UC 103 Add Comment_
 
-### 2.1.5 UC 105 Add Transaction
+### 2.1.4 UC 104 Add Transaction
 
-| Use Case ID  | UC 105 Exchange Item |
+| Use Case ID  | UC 104 Exchange Item |
 | --- | --- |
 | Description  | The website enables a user to perform an exchange |
 | --- | --- |
@@ -327,7 +300,7 @@ _Table 13__. UC 104 Add Comment_
 | --- | --- | --- |
 | 1. User clicks "Add Transaction" button  | 1.a User leaves the website |
 | 2. User creates a transaction From the dropdown menus a user selects:- anitem, seller, buyer, status, rating |
- |
+|
 | 3. User clicks "Submit" button  | 3.a User leaves the website  |
 | Results  | User completesan exchange |
 | --- | --- |
@@ -336,11 +309,11 @@ _Table 13__. UC 104 Add Comment_
 | The User is re-directed to the View All Transactions page |
 | --- |
 
-_Table 14__. UC 105 Add Transaction_
+_Table 14__. UC 104 Add Transaction_
 
-### 2.1.6 UC 106 View Clients
+### 2.1.5 UC 105 View Clients
 
-| Use Case ID  | UC 106 View Clients  |
+| Use Case ID  | UC 105 View Clients  |
 | --- | --- |
 | Description  | The website enables a user to view all clients |
 | --- | --- |
@@ -350,7 +323,7 @@ _Table 14__. UC 105 Add Transaction_
 | --- | --- |
 | Trigger  | The User wants to view other clients of the Exchange Service   |
 | --- | --- |
-| Preconditions  | The User is logged in to the website |
+| Preconditions  | The User has an account with the website |
 | --- | --- |
 | Other clients exist within the database |
 | --- |
@@ -364,11 +337,11 @@ _Table 14__. UC 105 Add Transaction_
 | Postconditions  | -  |
 | --- | --- |
 
-_Table 15__. UC 10 View Clients_
+_Table 15__. UC 105 View Clients_
 
-### 2.1.7 UC 107 View Comments
+### 2.1.6 UC 106 View Comments
 
-| Use Case ID  | UC 107 View Comments |
+| Use Case ID  | UC 106 View Comments |
 | --- | --- |
 | Description  | The website enables a user to view all comments |
 | --- | --- |
@@ -378,11 +351,11 @@ _Table 15__. UC 10 View Clients_
 | --- | --- |
 | Trigger  | The User wants to view other comments of the Exchange Service   |
 | --- | --- |
-| Preconditions  | The User is logged in to the website |
+| Preconditions  | The User has an account with the website |
 | --- | --- |
 | Other comments exist within the database |
 | --- |
-| Input   |  - |
+| Input   |   |
 | --- | --- |
 | Scenario  | Main  | Alternative  |
 | --- | --- | --- |
@@ -392,11 +365,11 @@ _Table 15__. UC 10 View Clients_
 | Postconditions  | -  |
 | --- | --- |
 
-_Table 18. UC 107 View Comments_
+_Table 18. UC 106 View Comments_
 
-### 2.1.8 UC 108 View Transactions
+### 2.1.7 UC 107 View Transactions
 
-| Use Case ID  | UC 108 View Transactions |
+| Use Case ID  | UC 107 View Transactions |
 | --- | --- |
 | Description  | The website enables a user to view all transactions |
 | --- | --- |
@@ -406,11 +379,11 @@ _Table 18. UC 107 View Comments_
 | --- | --- |
 | Trigger  | The User wants to view other transactions of the Exchange Service   |
 | --- | --- |
-| Preconditions  | The User is logged in to the website |
+| Preconditions  | The User has an account with the website |
 | --- | --- |
 | Other transactions exist within the database |
 | --- |
-| Input   |  - |
+| Input   |   |
 | --- | --- |
 | Scenario  | Main  | Alternative  |
 | --- | --- | --- |
@@ -420,24 +393,25 @@ _Table 18. UC 107 View Comments_
 | Postconditions  | -  |
 | --- | --- |
 
-_Table 19. UC 108 View Transactions_
+_Table 19. UC 107 View Transactions_
 
-### 2.1.9 UC 109 View Items
+### 2.1.8 UC 108 View Items
 
-| Use Case ID  | UC 106 View Items |
+| Use Case ID  | UC 108 View Items |
 | --- | --- |
 | Description  | The website enables a user to view all items |
+| --- | --- |
 | Responsible Actor   | User  |
 | --- | --- |
 | Participating Actor  | - |
 | --- | --- |
 | Trigger  | The User wants to view other items of the Exchange Service   |
 | --- | --- |
-| Preconditions  | The User is logged in to the website |
+| Preconditions  | The User has an account with the website |
 | --- | --- |
 | Other items exist within the database |
 | --- |
-| Input   |  - |
+| Input   |   |
 | --- | --- |
 | Scenario  | Main  | Alternative  |
 | --- | --- | --- |
@@ -447,23 +421,25 @@ _Table 19. UC 108 View Transactions_
 | Postconditions  | -  |
 | --- | --- |
 
-
-
-_Table 17. UC 109 View Items_
+_Table 17. UC 108 View Items_
 
 # 3 Business Logic and API design and Implementation
 
-## 3.1 Data access
+## 3.1 Data Access
 
-Data for the Exchange Service is accessible on the private Github repository, [https://github.com/UrsinaB/ExchangePlatformV0](https://github.com/UrsinaB/ExchangePlatformV0). Persistent database data is located on the uploaded file, "crm.mv.db". Frontend views were created on and are hosted by Budibase.
+Data for the Exchange Service is accessible on the private Github repository, [https://github.com/UrsinaB/ExchangePlatformV0](https://github.com/UrsinaB/ExchangePlatformV0). Persistent database data is located on the file, "crm.mv.db". Frontend views were created on and are hosted by Budibase.
 
 There is no security authorization required for the frontend to access the backend. We chose to disable security functions to aid in the technical feasibility of the project's development. We do acknowledge, that without token/session access client authentication after registration is not possible.
 
-## 3.2 Business logic layers
+## 3.2 Business Logic Layer
 
 The business logic for the Exchange Service was created using Spring Data JPA. We created four classes: Client, Item, Comment, and Transaction. Below is a brief explanation of what information was included in each of the layers in the Spring Boot repository.
 
-### 3.2.1 Data Layer
+### 3.2.1 Database Layer
+
+Our database (DB) is an H2, cloud hosted relational database. It stores all the CRUD information collected from our four entities. The data base runs as in memory. To share database information, we uploaded DB files from our individual Codespaces.
+
+### 3.2.2 Data Access/ Persistence Layer
 
 The data layer consists of domains and repositories for each class, along with an Enum class.
 
@@ -471,11 +447,11 @@ The data layer consists of domains and repositories for each class, along with a
 
 **Repository:** Instructions for foreign keys and database table joins.
 
-### 3.2.2 Service Layer
+### 3.2.3 Business / Service Layer
 
-The logic for how queries are to be carried out (CRUD operations) when received from the client and data access objects are stored within the service layer.
+The logic for how a query is to be carried out (CRUD operations) when received from the client.
 
-### 3.2.3 Controller
+### 3.2.4 Presentation Layer
 
 The Controller allows for the creation of endpoints for the website's views, and the processing of REST API requests. This layer also receives and sends HTTP requests and includes JSON data in the body.
 
@@ -487,23 +463,23 @@ When HTTP requests and responses are sent between the web browser and the webser
 
 ## 4.1 Design
 
-The front-end design of the Exchange Service was created on the low code website, Budibase. Our goal was to developpage views based on our users' requirements. In doing so we created an Add and view page for each of our use cases: Client, Item, Comment, Transaction. Additionally, we created landing, login, and profile pages to make the user experience feel more authentic. The admin page was created for the deletion of each use case.
+The front-end design of the Exchange Service was created on the low code website, Budibase. Our goal was to developpage views based on our users' requirements. In doing so, we created an Add, View, and Update page for each of our use cases: Client, Item, Comment, Transaction. Additionally, we created Home, and About Us pages to make the user experience feel more authentic. The admin page was created for the deletion of each use case.
 
 The colour scheme of the Exchange Service is based on a 1980s Synthwave colour palette. We chose this fun theme to stand out from the professional pages normally made for school assignments.
 
 Our Front end can be found with this link: https://inttech.budibase.app/app/exchangeservice
 
-**Landing Page**
+**Home Page**
 
-![](RackMultipart20230702-1-ghnpa5_html_1415f61998993c7e.png)
+![](RackMultipart20230702-1-ia5zht_html_1415f61998993c7e.png)
 
-_Figure 1. Landing Page_
+_Figure 1. Home Page_
 
 ## 4.2 Prototyping
 
-The structure of the website and the form fields were created directly from our UML model specifications. Inspirations for the layout and navigation came from our own experiences with developing websites in the past. To increase functionality, we had a beta tester review the site and make suggestions.
+The structure of the website and page forms were created directly from our UML model specifications. Inspirations for the layout and navigation came from our own experiences with developing websites in the past. To increase functionality, we had a beta tester review the site and make suggestions.
 
-## 4.3 Realization of frontend functionality
+## 4.3 Realization of Frontend Functionality
 
 To interface with the internet, a client is used. Front-end development is used to render web applications on the client. An interface is used to convey server requests and responses.
 
@@ -517,11 +493,11 @@ After receiving and processing the request, the server formats the result into a
 
 ## 5.1 Integration of frontend and backend
 
-The backend communicates data from the database to the client-side browser. It contains the server and connections to the database.
+The backend communicates data from the database to the client-side browser. It contains connections to the server and the database.
 
 **Server:** Hosted on Github
 
-**Database** : Used to structure collected data, stored in the programs DBI file
+**Database** : Used to structure collected data, stored in the program's DB files
 
 **Endpoints:** Locations of URI/URL resources used by APIs for accessing those resources
 
@@ -540,7 +516,7 @@ _Table 20. API Endpoint Reference List_
 
 # 6 REFLECTION
 
-Following the rubric of the project's documentation was made easier by having prior experience in website design. Our first few deliverables as a team, such as building a business case, requirements list, and so on, received great feedback. The second stage of the project, creating a usable website structure, proved to be more difficult. First, we had to learn how to program in Java, then we had to learn how to use Github Codespaces, set up version control with a Git repository, and learn how to structure a software architecture into the Spring Boot format.
+Following the rubric of the project's documentation was made easier by having prior experience in website design. Our first few deliverables as a team, such as building a business case, requirements list, and so on, received great feedback. The second stage of the project, creating a usable website structure, proved to be more difficult. First, we had to re-learn how to program in Java, then we had to learn how touse Github Codespaces, set up version control within a Git repository, and learn how to work with Spring Boot.
 
 We are proud of the work that we have done but, if given more time, we would add additional features, such as the creation of session tokens that can be stored long-term in the database and allowing users to delete and modify items, comments, and transactions by ID.
 
@@ -548,47 +524,45 @@ We also regret that we found some aspects of Budibase to be too complicated. Unf
 
 # 7 List of Figures
 
-[Figure 1. Landing Page 13](#_Toc137828663)
+[Figure 1. Home Page 13](#_Toc137828663)
 
 # 8 List of Tables
 
-[Table 1. Given/When/Then Acceptance Criteria 3](#_Toc137831689)
+[Table 1. Given/When/Then Acceptance Criteria 3](#_Toc139184650)
 
-[_Table 2. Stakeholder Analysis_ 4](#_Toc137831690)
+[Table 2. Stakeholder Analysis 3](#_Toc139184651)
 
-[Table 3. Overview Of Functional Requirements Register 4](#_Toc137831691)
+[Table 3. Overview Of Functional Requirements Register 4](#_Toc139184652)
 
-[Table 4. Use Case 100 Client/User 4](#_Toc137831692)
+[Table 4. Use Case 100 Client/User 4](#_Toc139184653)
 
-[Table 5. Use Case 200 Admin Requirements 4](#_Toc137831693)
+[Table 5. Use Case 200 Admin Requirements 4](#_Toc139184654)
 
-[Table 6. Use Case 300 Website Requirements 5](#_Toc137831694)
+[Table 6. Use Case 300 Website Requirements 4](#_Toc139184655)
 
-[Table 7. Use Case 400 UI/UX Requirements 6](#_Toc137831695)
+[Table 7. Use Case 400 UI/UX Requirements 5](#_Toc139184656)
 
-[Table 8. 500 Server Requirements 6](#_Toc137831696)
+[Table 8. 500 Server Requirements 5](#_Toc139184657)
 
-[Table 9. Overview Of Non-Functional Requirements Register 6](#_Toc137831697)
+[Table 9. Overview Of Non-Functional Requirements Register 5](#_Toc139184658)
 
-[Table 10. UC 101 Add Client/ Register 7](#_Toc137831698)
+[Table 10. UC 101 Add Client/ Register 6](#_Toc139184659)
 
-[Table 11. UC 102 Login 7](#_Toc137831699)
+[_Table 12__. UC 102 Add item_ 6](#_Toc139184660)
 
-[_Table 12__. UC 103 Add item_ 8](#_Toc137831700)
+[_Table 13__. UC 103 Add Comment_ 7](#_Toc139184661)
 
-[_Table 13__. UC 104 Add Comment_ 8](#_Toc137831701)
+[_Table 14__. UC 104 Add Transaction_ 8](#_Toc139184662)
 
-[_Table 14__. UC 105 Add Transaction_ 9](#_Toc137831702)
+[_Table 15__. UC 105 View Clients_ 8](#_Toc139184663)
 
-[_Table 15__. UC 10 View Clients_ 10](#_Toc137831703)
+[Table 18. UC 106 View Comments 8](#_Toc139184664)
 
-[Table 18. UC 107 View Comments 10](#_Toc137831704)
+[Table 19. UC 107 View Transactions 9](#_Toc139184665)
 
-[Table 19. UC 108 View Transactions 10](#_Toc137831705)
+[Table 17. UC 108 View Items 9](#_Toc139184666)
 
-[Table 17. UC 109 View Items 11](#_Toc137831706)
-
-[Table 20. API Endpoint Reference List 14](#_Toc137831707)
+[Table 20. API Endpoint Reference List 12](#_Toc139184667)
 
 # 9 References
 
