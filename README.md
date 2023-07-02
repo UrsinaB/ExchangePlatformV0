@@ -265,7 +265,6 @@ _Table 12__. UC 102 Add item_
 | --- | --- | --- |
 | 1. User clicks "Add comment" button  | 1.a User leaves the website |
 | 2. User adds a comment From the dropdown menus a user selects: - client, item- inputs: text |
-|
 | 3. User clicks "Submit" button  | 3.a User leaves the website  |
 | Results  | User add a comment |
 | --- | --- |
@@ -298,7 +297,6 @@ _Table 13__. UC 103 Add Comment_
 | --- | --- | --- |
 | 1. User clicks "Add Transaction" button  | 1.a User leaves the website |
 | 2. User creates a transaction From the dropdown menus a user selects:- anitem, seller, buyer, status, rating |
-|
 | 3. User clicks "Submit" button  | 3.a User leaves the website  |
 | Results  | User completesan exchange |
 | --- | --- |
