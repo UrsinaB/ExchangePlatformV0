@@ -1,4 +1,4 @@
-![](RackMultipart20230616-1-4gd9t9_html_6c26281631587fbe.jpg)
+![](RackMultipart20230702-1-ghnpa5_html_6c26281631587fbe.jpg)
 
 **Project**  **Website**
 
@@ -12,15 +12,16 @@ Devid Montecchiari, Charuta Pande
 
 June 25, 2023
 
+
 # 1 Analysis
 
-## 1.1 Scenario ideation
+## 1.1 Scenario Ideation
 
 A user wants to trade items with others via the internet. She requires that the website allows her to register, add items, comment on items, and create transactions.
 
 We have created the Exchange Service as a digital marketplace for the tradeof goods. To offer items for trade, a user must add a new item to the exchange platform. Goods can be exchanged immediately after completingregistration.
 
-## 1.2 Use case analysis
+## 1.2 Use Case Analysis
 
 A requirements analysis was conducted to determine the goals of the website. To do so, we first brainstormed ideas for how a user may interact with the site based on our own prior experiences with web shops. Next, we analysed competitor websites, such as the Swiss e-commerce websites galaxus.ch and Ricardo.ch, forrealistic design and functionality ideas. We used the gathered information to create various user stories, which we later developed into a stakeholder analysis.
 
@@ -28,29 +29,28 @@ After considering constraints to the project, such as the project's requirements
 
 Our requirements analysis concluded in the development of Use Cases which are shown in section 1.3 User Story Writing, 1.4 Acceptance Criteria, 1.5 Stakeholder Analysis, and 1.6 Requirements.
 
-## 1.3 User story writing
+## 1.3 User Stories
 
 ### 1.3.1 Client/User (Module Suggestions)
 
-1. As a [user], I want to have a Web app so that I can use it on different mobile devices and on desktop computers.
-2. As a [user], I want to see a consistent visual appearance so that I can navigate easily, and it looks consistent.
-3. As a [user], I want to use list views so that I can view all data available on the site.
-4. As a [user], I want to create an account so that I can get access to the Exchange Service.
-5. As a [user], I want to edit my profile so that my data is up to date.
+1. As a user, I want to have a Web app so that I can use it on different mobile devices and on desktop computers.
+2. As a user, I want to see a consistent visual appearance so that I can navigate easily, and it looks consistent.
+3. As a user, I want to use list views so that I can view all data available on the site.
+4. As a user, I want to create an account so that I can get access to the Exchange Service.
+5. As a user, I want to edit my profile so that my data is up to date.
 
 ### 1.3.2 Client/User (Our Suggestions)
 
-6. As a [user], I want to receive/send messages, so that I can communicate with others on the site.
-7. As a [user], I want to add items for exchange, so that my goods are available for other users to see.
-8. As a [user], I want to edit the items I have posted for exchange, so that the current condition of my goods are available for other users to see.
-9. As a [user], I want to remove the items that I have posted for exchange, so that my goods are not available for other users to see.
-10. As a [user], I want to view items for exchange, so that I can see what is available on the site.
-11. As a [user], I want to search for items that are available for exchange, so that I can see what is available on the site based on my own criteria.
-12. As a [user], I want to exchange my old items for other items that are available for exchange, so that I can complete a transaction.
+6. As a user, I want to receive/send messages, so that I can communicate with others on the site.
+7. As a user, I want to add items for exchange, so that my goods are available for other users to see.
+8. As a user, I want to edit the items I have posted for exchange, so that the current condition of my goods are available for other users to see.
+9. As a user, I want to view items for exchange, so that I can see what is available on the site.
+10. As a user, I want to search for items that are available for exchange, so that I can see what is available on the site based on my own criteria.
+11. As a user, I want to exchange my old items for other items that are available for exchange, so that I can complete a transaction.
 
 ### 1.3.3 Website Administrator
 
-13. As a Website Administrator, I want to have full stack development authorization access so that I can develop and maintain the website, and database.
+12. As a Website Administrator, I want to have full stack development authorization access so that I can develop and maintain the website, and database.
 
 ## 1.4 Acceptance Criteria
 
@@ -175,7 +175,7 @@ _Table 9. Overview Of Non-Functional Requirements Register_
 
 ## 2.1 Package 100 - Client/User Use Cases
 
-### 2.1.1 UC 101 Add Client/ Register
+### 2.1. 1UC 101 Add Client/ Register
 
 | Use Case ID  | UC 101 Add Client/Register |
 | --- | --- |
@@ -264,9 +264,7 @@ _Table 11. UC 102 Login_
 | --- | --- | --- |
 | 1. User clicks "Add Item" button  | 1.a User leaves the website |
 | 2. User adds an item From the dropdown menus a user selects:- client, status, category- inputs: Title, Description |
- |
-|
- | 3. User clicks "Submit" button  | 3.a User leaves the website  |
+| 3. User clicks "Submit" button  | 3.a User leaves the website  |
 | --- | --- | --- |
 | Results  | User add an item |
 | Postconditions  | The item is successfully added to the database  |
@@ -297,7 +295,6 @@ _Table 12__. UC 103 Add item_
 | --- | --- | --- |
 | 1. User clicks "Add comment" button  | 1.a User leaves the website |
 | 2. User adds a comment From the dropdown menus a user selects: - client, item- inputs: text |
- |
 | 3. User clicks "Submit" button  | 3.a User leaves the website  |
 | Results  | User add a comment |
 | --- | --- |
@@ -385,7 +382,7 @@ _Table 15__. UC 10 View Clients_
 | --- | --- |
 | Other comments exist within the database |
 | --- |
-| Input   |   |
+| Input   |  - |
 | --- | --- |
 | Scenario  | Main  | Alternative  |
 | --- | --- | --- |
@@ -413,7 +410,7 @@ _Table 18. UC 107 View Comments_
 | --- | --- |
 | Other transactions exist within the database |
 | --- |
-| Input   |   |
+| Input   |  - |
 | --- | --- |
 | Scenario  | Main  | Alternative  |
 | --- | --- | --- |
@@ -441,7 +438,7 @@ _Table 19. UC 108 View Transactions_
 | --- | --- |
 | Other items exist within the database |
 | --- |
-| Input   |   |
+| Input   |  - |
 | --- | --- |
 | Scenario  | Main  | Alternative  |
 | --- | --- | --- |
@@ -457,7 +454,7 @@ _Table 17. UC 109 View Items_
 
 ## 3.1 Data access
 
-Data for the Exchange Service is accessible on the private Github repository, [https://github.com/UrsinaB/ExchangePlatformV0](https://github.com/UrsinaB/ExchangePlatformV0). Persistent database data is located on the file, "crm.mv.db". Frontend views were created on and are hosted by Budibase.
+Data for the Exchange Service is accessible on the private Github repository, [https://github.com/UrsinaB/ExchangePlatformV0](https://github.com/UrsinaB/ExchangePlatformV0). Persistent database data is located on the uploaded file, "crm.mv.db". Frontend views were created on and are hosted by Budibase.
 
 There is no security authorization required for the frontend to access the backend. We chose to disable security functions to aid in the technical feasibility of the project's development. We do acknowledge, that without token/session access client authentication after registration is not possible.
 
@@ -497,13 +494,13 @@ Our Front end can be found with this link: https://inttech.budibase.app/app/exch
 
 **Landing Page**
 
-![](RackMultipart20230616-1-4gd9t9_html_1415f61998993c7e.png)
+![](RackMultipart20230702-1-ghnpa5_html_1415f61998993c7e.png)
 
 _Figure 1. Landing Page_
 
 ## 4.2 Prototyping
 
-The structure of the website was created directly from our UML model. Inspirations for the layout and navigation came from our own experiences with developing websites in the past. To increase functionality, we had a beta tester review the site and make suggestions.
+The structure of the website and the form fields were created directly from our UML model specifications. Inspirations for the layout and navigation came from our own experiences with developing websites in the past. To increase functionality, we had a beta tester review the site and make suggestions.
 
 ## 4.3 Realization of frontend functionality
 
@@ -527,7 +524,7 @@ The backend communicates data from the database to the client-side browser. It c
 
 **Endpoints:** Locations of URI/URL resources used by APIs for accessing those resources
 
-## 5.2 Consuming REST APIs from the web service
+## 5.2 consuming REST APIs from the web service
 
 Below is an example oftwo endpoint locations of the URI/URL resources used by our APIs (routes) for accessing resources.
 
