@@ -431,11 +431,18 @@ _Table 19. UC 108 View Transactions_
 | Trigger  | The User wants to view other items of the Exchange Service   |
 | Preconditions  | The User is logged in to the website |
 | Other items exist within the database |
-| Input   |  - |
+| --- | --- |
+| Other items exist within the database |
+| --- |
+| Input   |   |
+| --- | --- |
 | Scenario  | Main  | Alternative  |
+| --- | --- | --- |
 | 1. User is re-directed to the View All Items page after adding/updating an item | 1.a User leaves the website  |
 | Results  | User views items |
 | Postconditions  | -  |
+
+
 
 _Table 17. UC 109 View Items_
 
