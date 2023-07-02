@@ -425,22 +425,27 @@ _Table 19. UC 108 View Transactions_
 ### 2.1.9 UC 109 View Items
 
 | Use Case ID  | UC 106 View Items |
+| --- | --- |
 | Description  | The website enables a user to view all items |
 | Responsible Actor   | User  |
+| --- | --- |
 | Participating Actor  | - |
+| --- | --- |
 | Trigger  | The User wants to view other items of the Exchange Service   |
+| --- | --- |
 | Preconditions  | The User is logged in to the website |
-| Other items exist within the database |
 | --- | --- |
 | Other items exist within the database |
 | --- |
-| Input   |   |
+| Input   |  - |
 | --- | --- |
 | Scenario  | Main  | Alternative  |
 | --- | --- | --- |
 | 1. User is re-directed to the View All Items page after adding/updating an item | 1.a User leaves the website  |
+| --- | --- |
 | Results  | User views items |
 | Postconditions  | -  |
+| --- | --- |
 
 
 
